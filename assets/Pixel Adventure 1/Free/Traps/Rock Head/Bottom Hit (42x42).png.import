@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cg4swp080dev4"
-path="res://.godot/imported/Bottom Hit (42x42).png-09e50ee37bd3e35204bfc6b9a09f3dd5.ctex"
+path="res://.godot/imported/Bottom Hit (42x42).png-028f304fe9c4d6c24786a76b844d076a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure 1/Free/Traps/Rock Head/Bottom Hit (42x42).png"
-dest_files=["res://.godot/imported/Bottom Hit (42x42).png-09e50ee37bd3e35204bfc6b9a09f3dd5.ctex"]
+source_file="res://assets/Pixel Adventure 1/Free/Traps/Rock Head/Bottom Hit (42x42).png"
+dest_files=["res://.godot/imported/Bottom Hit (42x42).png-028f304fe9c4d6c24786a76b844d076a.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpk0wv77fa72k"
-path="res://.godot/imported/Ice Particle.png-1093e95e4c7828724d903bbdecef85e7.ctex"
+path="res://.godot/imported/Ice Particle.png-201d45c4937c7b70351de6ed7fb412ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure 1/Free/Traps/Sand Mud Ice/Ice Particle.png"
-dest_files=["res://.godot/imported/Ice Particle.png-1093e95e4c7828724d903bbdecef85e7.ctex"]
+source_file="res://assets/Pixel Adventure 1/Free/Traps/Sand Mud Ice/Ice Particle.png"
+dest_files=["res://.godot/imported/Ice Particle.png-201d45c4937c7b70351de6ed7fb412ac.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdr853rgqmu82"
-path="res://.godot/imported/Green.png-925d490daf99ddaafb4f6a8c839f0122.ctex"
+path="res://.godot/imported/Green.png-4cd36bea4ec63c6c163f371ed6cddd86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure 1/Free/Background/Green.png"
-dest_files=["res://.godot/imported/Green.png-925d490daf99ddaafb4f6a8c839f0122.ctex"]
+source_file="res://assets/Pixel Adventure 1/Free/Background/Green.png"
+dest_files=["res://.godot/imported/Green.png-4cd36bea4ec63c6c163f371ed6cddd86.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbmtsyepoc51y"
-path="res://.godot/imported/Top Hit (54x52).png-564aed94a68ed0b0828a1cda93fbbbb4.ctex"
+path="res://.godot/imported/Top Hit (54x52).png-e1bd84896f6010128c68552c51ca5ce0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure 1/Free/Traps/Spike Head/Top Hit (54x52).png"
-dest_files=["res://.godot/imported/Top Hit (54x52).png-564aed94a68ed0b0828a1cda93fbbbb4.ctex"]
+source_file="res://assets/Pixel Adventure 1/Free/Traps/Spike Head/Top Hit (54x52).png"
+dest_files=["res://.godot/imported/Top Hit (54x52).png-e1bd84896f6010128c68552c51ca5ce0.ctex"]
 
 [params]
 

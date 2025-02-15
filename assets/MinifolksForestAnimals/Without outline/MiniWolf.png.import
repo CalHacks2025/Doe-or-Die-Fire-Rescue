@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://c4ui163qdakva"
+=======
+uid="uid://bcwajyms2vsst"
+>>>>>>> 3ff5c82180879ea0d31502b513f1d13989e873f3
 path="res://.godot/imported/MiniWolf.png-8fa7597008b80138e2598ed9e7343dee.ctex"
 metadata={
 "vram_texture": false
