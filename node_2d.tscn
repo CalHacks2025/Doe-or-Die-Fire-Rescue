@@ -5,6 +5,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Brown" type="Sprite2D" parent="."]
-position = Vector2(573.5, 332)
-scale = Vector2(18.5156, 11.25)
+position = Vector2(572.5, 330)
+scale = Vector2(18.4219, 10.625)
 texture = ExtResource("1_gpv3a")
