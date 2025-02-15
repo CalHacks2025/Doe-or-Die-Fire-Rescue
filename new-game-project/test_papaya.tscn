@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccqay583fgx5c"]
+
+[ext_resource type="Texture2D" uid="uid://dbjcnxkw6x2wa" path="res://addons/Green.png" id="1_1mlu0"]
+
+[node name="test_papaya" type="Sprite2D"]
+
+[node name="Green" type="Sprite2D" parent="."]
+position = Vector2(564.75, 337.25)
+scale = Vector2(18.9141, 10.9609)
+texture = ExtResource("1_1mlu0")
