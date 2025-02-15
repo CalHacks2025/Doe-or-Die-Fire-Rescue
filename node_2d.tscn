@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjotyrkw8e2br"]
+
+[ext_resource type="Texture2D" uid="uid://davpk7et62udo" path="res://Pixel Adventure 1/Free/Background/Brown.png" id="1_gpv3a"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Brown" type="Sprite2D" parent="."]
+position = Vector2(573.5, 332)
+scale = Vector2(18.5156, 11.25)
+texture = ExtResource("1_gpv3a")
