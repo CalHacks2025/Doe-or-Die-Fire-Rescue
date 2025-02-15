@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjotyrkw8e2br"]
+
+[ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Scene/fire_man.tscn" id="1_xg3qm"]
+[ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Scene/animal_rescue.tscn" id="2_w4a0o"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="fire_man" parent="." instance=ExtResource("1_xg3qm")]
+
+[node name="animal_rescue" parent="." instance=ExtResource("2_w4a0o")]
+position = Vector2(486, 171)
