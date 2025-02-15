@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4juqgpghx6rn"]
+[gd_scene load_steps=5 format=3 uid="uid://b4juqgpghx6rn"]
 
-[ext_resource type="Texture2D" uid="uid://cy2qyubcdi8t" path="res://assets/Pixel Adventure 1/Free/Main Characters/Virtual Guy/Fall (32x32).png" id="1_btvqa"]
+[ext_resource type="Texture2D" uid="uid://cpbchya8p1qss" path="res://assets/Pixel Adventure 1/Free/Main Characters/Virtual Guy/Fall (32x32).png" id="1_btvqa"]
 [ext_resource type="Script" path="res://Scene/animal_rescue.gd" id="1_ir31v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_exa6c"]
 radius = 50.0
 height = 162.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3f1d"]
+radius = 72.0
+height = 160.0
 
 [node name="animal_rescue" type="CharacterBody2D"]
 script = ExtResource("1_ir31v")
@@ -15,5 +19,14 @@ scale = Vector2(5, 5)
 texture = ExtResource("1_btvqa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(3, 18)
 shape = SubResource("CapsuleShape2D_exa6c")
+
+[node name="animal_rescue_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="animal_rescue_hitbox"]
+position = Vector2(5, 14)
+shape = SubResource("CapsuleShape2D_l3f1d")
+
+[connection signal="body_entered" from="animal_rescue_hitbox" to="." method="_on_animal_rescue_hitbox_body_entered"]

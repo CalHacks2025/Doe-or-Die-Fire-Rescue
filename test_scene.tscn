@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cde8utwr0jdth"]
+
+[ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Scene/animal_rescue.tscn" id="1_ixe1r"]
+[ext_resource type="PackedScene" uid="uid://d3hmnxo8uu4nh" path="res://fire.tscn" id="2_rlog7"]
+
+[node name="TileMap" type="TileMap"]
+format = 2
+
+[node name="animal_rescue" parent="." instance=ExtResource("1_ixe1r")]
+position = Vector2(32, -16)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_rlog7")]
+position = Vector2(187, -15)
