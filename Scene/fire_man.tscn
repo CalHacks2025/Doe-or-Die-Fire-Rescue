@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://clt8fnfsw7qi1"]
 
 [ext_resource type="Script" path="res://Scene/fire_man.gd" id="1_oq64c"]
-[ext_resource type="Texture2D" uid="uid://m4hd7otrpj05" path="res://assets/Pixel Adventure 1/Free/Main Characters/Ninja Frog/Jump (32x32).png" id="1_wiyru"]
+[ext_resource type="Texture2D" uid="uid://g7jmvupnvdpw" path="res://assets/Pixel Adventure 1/Free/Main Characters/Ninja Frog/Jump (32x32).png" id="1_wiyru"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dexjf"]
 radius = 50.0
