@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bih1q10qk4x0i"
-path="res://.godot/imported/Checkpoint (Flag Idle)(64x64).png-8c8263e5b5e1004a5968fcd5a120d93b.ctex"
+path="res://.godot/imported/Checkpoint (Flag Idle)(64x64).png-823861dcd6e346531ba825ee4acce067.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure 1/Free/Items/Checkpoints/Checkpoint/Checkpoint (Flag Idle)(64x64).png"
-dest_files=["res://.godot/imported/Checkpoint (Flag Idle)(64x64).png-8c8263e5b5e1004a5968fcd5a120d93b.ctex"]
+source_file="res://assets/Pixel Adventure 1/Free/Items/Checkpoints/Checkpoint/Checkpoint (Flag Idle)(64x64).png"
+dest_files=["res://.godot/imported/Checkpoint (Flag Idle)(64x64).png-823861dcd6e346531ba825ee4acce067.ctex"]
 
 [params]
 

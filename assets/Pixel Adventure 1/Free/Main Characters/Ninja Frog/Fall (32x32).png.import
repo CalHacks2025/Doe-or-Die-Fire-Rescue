@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsvpwu7hh4djy"
-path="res://.godot/imported/Fall (32x32).png-a9022a16c8388b47fe780c7cc1618516.ctex"
+path="res://.godot/imported/Fall (32x32).png-7dd19687782d604e23d62c50b727cb02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure 1/Free/Main Characters/Ninja Frog/Fall (32x32).png"
-dest_files=["res://.godot/imported/Fall (32x32).png-a9022a16c8388b47fe780c7cc1618516.ctex"]
+source_file="res://assets/Pixel Adventure 1/Free/Main Characters/Ninja Frog/Fall (32x32).png"
+dest_files=["res://.godot/imported/Fall (32x32).png-7dd19687782d604e23d62c50b727cb02.ctex"]
 
 [params]
 

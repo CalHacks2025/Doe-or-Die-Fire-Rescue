@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpkt07kr7mli5"
-path="res://.godot/imported/Break.png-90605f65e548c9c47c0ffdc8ad9a53cf.ctex"
+path="res://.godot/imported/Break.png-5a000cb8cd27501864dedbc8f2fc8ca7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure 1/Free/Items/Boxes/Box3/Break.png"
-dest_files=["res://.godot/imported/Break.png-90605f65e548c9c47c0ffdc8ad9a53cf.ctex"]
+source_file="res://assets/Pixel Adventure 1/Free/Items/Boxes/Box3/Break.png"
+dest_files=["res://.godot/imported/Break.png-5a000cb8cd27501864dedbc8f2fc8ca7.ctex"]
 
 [params]
 

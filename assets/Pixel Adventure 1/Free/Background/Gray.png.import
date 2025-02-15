@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl7anvns0gou1"
-path="res://.godot/imported/Gray.png-a1e85804e2054d6f41aced88368d5e43.ctex"
+path="res://.godot/imported/Gray.png-736bdf576ba74a7674c18e27d1dccd5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Adventure 1/Free/Background/Gray.png"
-dest_files=["res://.godot/imported/Gray.png-a1e85804e2054d6f41aced88368d5e43.ctex"]
+source_file="res://assets/Pixel Adventure 1/Free/Background/Gray.png"
+dest_files=["res://.godot/imported/Gray.png-736bdf576ba74a7674c18e27d1dccd5a.ctex"]
 
 [params]
 
