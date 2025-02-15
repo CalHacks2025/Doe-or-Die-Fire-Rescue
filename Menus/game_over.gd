@@ -11,11 +11,10 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_start_pressed() -> void:
-	print("Start")
-	get_tree().change_scene_to_file("res://Menus/Shop.tscn") # Change to Level 1
+func _on_restart_pressed() -> void:
+	#get_tree().change_scene_to_file("res://Menus/Shop.tscn") # Change to level 1
+	pass
 
 
 func _on_exit_pressed() -> void:
-	print("Exit")
 	get_tree().quit()
