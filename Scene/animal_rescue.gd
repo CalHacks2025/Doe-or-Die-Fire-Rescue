@@ -7,14 +7,14 @@ const JUMP_VELOCITY = -400.0
 func move() -> void:
 	var direction = Vector2.ZERO
 	
-	if Input.is_action_pressed("move_left_a"):
+	if Input.is_action_pressed("move_left_la"):
 		direction.x = -1
-	elif  Input.is_action_pressed("move_right_d"):
+	elif  Input.is_action_pressed("move_right_ra"):
 		direction.x = 1
 	
-	if Input.is_action_pressed("move_down_s"):
+	if Input.is_action_pressed("move_down_da"):
 		direction.y = 1
-	elif  Input.is_action_pressed("move_up_w"):
+	elif  Input.is_action_pressed("move_up_ua"):
 		direction.y = -1
 	
 	if direction.x != 0 and direction.y != 0:
