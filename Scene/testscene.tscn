@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi6aaund8rwix"]
+
+[ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Players/animal_rescue.tscn" id="1_2r4nx"]
+[ext_resource type="PackedScene" uid="uid://vfloha6x3wmi" path="res://Objects/fire.tscn" id="2_nuncb"]
+[ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="3_le7rr"]
+
+[node name="testscene" type="TileMap"]
+format = 2
+
+[node name="animal_rescue" parent="." instance=ExtResource("1_2r4nx")]
+position = Vector2(164, 232)
+
+[node name="Fire" parent="." instance=ExtResource("2_nuncb")]
+position = Vector2(388, 236)
+
+[node name="fire_man" parent="." instance=ExtResource("3_le7rr")]
+position = Vector2(388, 236)
