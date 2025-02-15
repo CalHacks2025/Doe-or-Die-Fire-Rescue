@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkhd7ftsdq86s"]
+
+[ext_resource type="Script" path="res://Menus/shop.gd" id="1_nfaug"]
+
+[sub_resource type="GDScript" id="GDScript_4fqv2"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_continue_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Menus/MainMenu.tscn\") # Change to next level
+
+
+func _on_item3_pressed() -> void:
+	# add powerup or flag or smt
+	pass
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nfaug")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = 152.0
+offset_right = 40.0
+offset_bottom = 213.0
+grow_horizontal = 2
+text = "Shop !!!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5
+offset_top = -20.0
+offset_right = 83.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item1Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "item1"
+
+[node name="Item2Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "item2"
+
+[node name="Item3Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "item3"
+
+[node name="ContinueButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 513.0
+offset_right = 623.0
+offset_bottom = 544.0
+text = "Continue !!"
+script = SubResource("GDScript_4fqv2")
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]
