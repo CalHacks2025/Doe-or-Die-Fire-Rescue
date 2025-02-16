@@ -155,6 +155,9 @@ polygon = PackedVector2Array(1124, 56, 1123, 113, 1823, 106, 1823, 57)
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(1874, 303, 1874, 155, 1985, 161, 1982, 115, 1982, 110, 1984, 0, 1971, 1, 1997, -62, 2108, 236, 2070, 330)
 
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1889, 57, 1982, 57, 1983, 110, 1889, 110)
+
 [node name="Fire" parent="StaticBody2D" instance=ExtResource("3_p7cog")]
 position = Vector2(1024, -5)
 
