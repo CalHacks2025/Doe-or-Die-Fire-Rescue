@@ -33,6 +33,9 @@ func _on_random_move_timer_timeout():
 
 
 func _ready():
+	if GameManager.total_animals < 0:
+		GameManager.total_animals = 0
+	GameManager.total_animals += 1
 	fireman = get_tree().get_nodes_in_group("fire_man")[0] # Set fireman entity to damage
 	
 	# Initialize random movement

@@ -156,6 +156,7 @@ func _process(_delta: float) -> void:
 		for fire in fire_objects:
 			fire.queue_free()
 			fire_died = true
+			GameManager.fires_left -= 1
 		fire_objects.clear() 
 		
 		if fire_died:
