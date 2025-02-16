@@ -73,10 +73,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gtup7"]
-radius = 144.031
+radius = 110.018
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hwtco"]
-radius = 254.049
+radius = 199.01
 
 [node name="Deer" type="CharacterBody2D"]
 position = Vector2(-25, -2)
