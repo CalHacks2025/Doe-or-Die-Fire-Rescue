@@ -18,8 +18,8 @@ func _process(delta: float) -> void:
 
 
 func _on_restart_pressed() -> void:
-	#get_tree().change_scene_to_file("res://Menus/Shop.tscn") # Change to level 1
-	pass
+	print("HELLO WORLD")
+	get_tree().change_scene_to_file("res://Menus/Shop.tscn") # Change to level 1
 
 
 func _on_exit_pressed() -> void:
