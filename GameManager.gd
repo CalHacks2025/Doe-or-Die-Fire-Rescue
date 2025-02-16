@@ -8,6 +8,9 @@ var money = 0 # ur broke
 var TIMEOUT = 30 # default timeout for now
 var timer = Timer.new() 
 
+var fire_man_alive = true
+var animal_rescute_alive = true
+
 # stats/powerups
 var PLAYER_SPEED
 var WATER_RADIUS
@@ -56,7 +59,11 @@ func timer_reset(seconds):
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if (not fire_man_alive) and (not animal_rescute_alive):
+		game_over = -1
+		get_tree().change_scene_to_file("res://Menus/GameOver.tscn")
+		fire_man_alive = true
+		animal_rescute_alive = true
 
 func next_level():
 	last_money_earned = int(timer.time_left)

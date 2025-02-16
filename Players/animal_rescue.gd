@@ -111,6 +111,7 @@ func _physics_process(delta: float) -> void:
 	fire_kill()
 	if health <=0:
 		player_alive = false
+		GameManager.animal_rescute_alive = false
 		health = 0
 		print("Player has been killed")
 		self.queue_free()
