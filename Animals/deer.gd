@@ -8,8 +8,8 @@ extends CharacterBody2D
 var random_direction: Vector2 = Vector2.ZERO
 var random_move_timer: float = 0.0
 
-const SPEED = 100
-var is_chasing: bool = true
+const SPEED = 175
+var is_chasing: bool = false
 
 func get_random_direction() -> Vector2:
 	# Generate a random direction vector
@@ -18,23 +18,25 @@ func get_random_direction() -> Vector2:
 
 func _ready():
 	fireman = get_tree().get_nodes_in_group("fire_man")[0] # Set fireman entity to chase
-	$AnimatedSprite2D.play("idle")
+	#$AnimatedSprite2D.play("idle")
 	
 	# Setup area for aggro (chasing behaviour) towards fireman
-	var area2D = $Area2D
-	area2D.area_entered.connect(_on_body_entered)
-	area2D.area_exited.connect(_on_body_exited)
+	var da = $"deer_agro"
+	da.area_entered.connect(_on_aggro_entered)
+	
+	var dna = $"deer_deagro"
+	dna.area_exited.connect(_on_aggro_exited)
 	
 	# Initialize random movement
 	#random_direction = get_random_direction()
 	#random_move_timer = random_move_interval
 
-func _on_body_entered(body):
-	if body.name == "fire_man":
+func _on_aggro_entered(body):
+	if body.name == "fire_man_hitbox":
 		is_chasing = true
 
-func _on_body_exited(body: Node):
-	if body.name == "fire_man":
+func _on_aggro_exited(body):
+	if body.name == "fire_man_hitbox":
 		is_chasing = false
 
 # Head towards fireman if aggroed
@@ -48,7 +50,6 @@ func chase_fireman() -> void:
 
 # Head in a pseudo random fashion
 func move_random() -> void:
-	print("Test")
 	velocity = Vector2.ZERO
 	pass
 	

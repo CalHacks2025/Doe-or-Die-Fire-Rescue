@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://lfts5qw4wtmt"]
+[gd_scene load_steps=2 format=3 uid="uid://pwgny7sqq6c"]
 
 [ext_resource type="Script" path="res://Menus/dummy_level.gd" id="1_1i3vb"]
 
@@ -25,5 +25,11 @@ offset_top = 100.0
 offset_right = 666.0
 offset_bottom = 163.0
 text = "go to the shop"
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 45.0
+offset_top = 34.0
+offset_right = 186.0
+offset_bottom = 84.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
