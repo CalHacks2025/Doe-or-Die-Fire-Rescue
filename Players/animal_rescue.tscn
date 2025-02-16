@@ -573,5 +573,9 @@ scale = Vector2(0.5, 1)
 texture = ExtResource("10_ytn6a")
 centered = false
 
+[node name="damage_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="body_entered" from="animal_rescue_hitbox" to="." method="_on_animal_rescue_hitbox_body_entered"]
 [connection signal="body_exited" from="animal_rescue_hitbox" to="." method="_on_animal_rescue_hitbox_body_exited"]
+[connection signal="timeout" from="damage_cooldown" to="." method="_on_damage_cooldown_timeout"]

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://bcbcfct43egxt"]
+[gd_resource type="TileSet" load_steps=31 format=3 uid="uid://bcbcfct43egxt"]
 
 [ext_resource type="Texture2D" uid="uid://db0aufapdc64q" path="res://assets/Pixel Adventure 1/Free/Tilemap_Flat.png" id="1_w577i"]
 [ext_resource type="Texture2D" uid="uid://cg8elle57cyoe" path="res://assets/AnimatedTreeFree/AnimatedTreeFree/zeo254-completed-commission.png" id="2_jbnxa"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://csnh3u6n5y2yo" path="res://Tiny Swords/Tiny Swords (Update 010)/Terrain/Bridge/Bridge_All.png" id="7_3om04"]
 [ext_resource type="Texture2D" uid="uid://bepv6x1ww1a06" path="res://Tiny Swords/Tiny Swords (Update 010)/Deco/05.png" id="7_75sa6"]
 [ext_resource type="Texture2D" uid="uid://dkctk7754nfjh" path="res://assets/Free Pixel Art Sprite Boats/Plain Boats/Boat free grey plain.png" id="8_6onxh"]
+[ext_resource type="Texture2D" uid="uid://co6qtcdyxvkyu" path="res://Tiny Swords/Tiny Swords (Update 010)/Deco/06.png" id="8_eejn3"]
 [ext_resource type="Texture2D" uid="uid://od25lkhv0inc" path="res://assets/Free Pixel Art Sprite Boats/Boat Idle/Boat free grey.png" id="9_07mod"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p2m6a"]
@@ -1237,6 +1238,25 @@ texture = ExtResource("7_75sa6")
 2:1/0 = 0
 1:2/0 = 0
 2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1ph5"]
+texture = ExtResource("8_eejn3")
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8.65625, -7.6875, 8, -0.4375, 1.40625, 4.0625, -8, 2.3125)
+1:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8.65625, -7.6875, 8, -0.4375, 1.40625, 4.0625, -8, 2.3125)
+2:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+2:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m4fm5"]
 texture = ExtResource("3_17lt8")
@@ -2633,6 +2653,8 @@ texture = ExtResource("9_07mod")
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 2
 physics_layer_1/collision_mask = 2
+physics_layer_2/collision_layer = 4
+physics_layer_2/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_p2m6a")
 sources/1 = SubResource("TileSetAtlasSource_dprc6")
 sources/2 = SubResource("TileSetAtlasSource_m4fm5")
@@ -2647,3 +2669,4 @@ sources/11 = SubResource("TileSetAtlasSource_77leh")
 sources/12 = SubResource("TileSetAtlasSource_3app8")
 sources/13 = SubResource("TileSetAtlasSource_7qcs0")
 sources/14 = SubResource("TileSetAtlasSource_ya1ku")
+sources/16 = SubResource("TileSetAtlasSource_p1ph5")

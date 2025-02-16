@@ -17,6 +17,7 @@ func get_random_direction() -> Vector2:
 	var angle = randf_range(0, 2 * PI)
 	return Vector2(cos(angle), sin(angle)).normalized()
 
+
 # Handle random movement when the timer times out
 func _on_random_move_timer_timeout():
 	# Generate a random direction
@@ -30,7 +31,11 @@ func _on_random_move_timer_timeout():
 	else:
 		is_moving = true
 
+
 func _ready():
+	if GameManager.total_animals < 0:
+		GameManager.total_animals = 0
+	GameManager.total_animals += 1
 	fireman = get_tree().get_nodes_in_group("fire_man")[0] # Set fireman entity to damage
 	
 	# Initialize random movement
@@ -49,10 +54,6 @@ func move_randomly() -> void:
 		
 	move_and_slide()
 
-func _on_DetectRadius_body_entered(body):
-	# Damage if a fireman
-	if body == fireman:
-		fireman.take_damage(10)
 
 func _physics_process(_delta):
 	move_randomly()

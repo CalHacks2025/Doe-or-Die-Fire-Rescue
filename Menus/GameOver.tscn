@@ -1,6 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfusjmbtwus3a"]
+[gd_scene load_steps=13 format=3 uid="uid://cfusjmbtwus3a"]
 
-[ext_resource type="Script" path="res://Menus/game_over.gd" id="1_nan7w"]
+[ext_resource type="FontFile" uid="uid://dpksqjtkg6stf" path="res://assets/Fonts/mago1.ttf" id="2_765df"]
+[ext_resource type="FontFile" uid="uid://vxgjg3p71pyn" path="res://assets/Fonts/mago3.ttf" id="2_kyeh0"]
+[ext_resource type="Texture2D" uid="uid://cfyxpke5a1moi" path="res://assets/UI assets pack 2/UI assets pack 2/UI books & more.png" id="3_6w2in"]
+[ext_resource type="Texture2D" uid="uid://32l1e2pue0r7" path="res://assets/gui/background/background_forest.png" id="4_d81wt"]
+
+[sub_resource type="GDScript" id="GDScript_pr7mv"]
+script/source = "extends Control
+
+
+var facts = [\"The average number of people exposed to heatwaves has increased by approximately 125 million since the beginning of the century.
+\", \"These broader climate changes include: rising sea levels, shrinking mountain glaciers, accelerating ice melt in Greenland, Antarctica and the Arctic, and shifts in flower and plant blooming times.\", 
+\"Human activity, especially greenhouse gas emissions, is considered the dominant cause of temperature increases.\", 
+\"The greenhouse effect refers to the way the Earth’s atmosphere traps and absorbs solar energy.\", 
+\"In 2018, there were 14 extreme-weather events that resulted in more than $1 billion in damages.\"]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	var label = $\"Label\"
+	var factLabel = $\"FactLabel\"
+
+	var random_fact = facts.pick_random()
+	factLabel.text = random_fact
+	
+	if GameManager.game_over == -1:
+		print(\"Set game over message\")
+		label.text = \"Game Over :(\"
+	else:
+		print(\"Set you won message\")
+		label.text = \"You won!\"
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_restart_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Menus/Shop.tscn\") # Change to level 1
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()
+"
+
+[sub_resource type="Theme" id="Theme_e167l"]
+default_font = ExtResource("2_765df")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_esqte"]
+texture = ExtResource("3_6w2in")
+region_rect = Rect2(224, 305, 32, 14)
+
+[sub_resource type="Theme" id="Theme_2757d"]
+default_font = ExtResource("2_kyeh0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vwbk4"]
+texture = ExtResource("3_6w2in")
+region_rect = Rect2(288, 272, 32, 16)
+
+[sub_resource type="Theme" id="Theme_j51ft"]
+default_font = ExtResource("2_kyeh0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e1w06"]
+texture = ExtResource("3_6w2in")
+region_rect = Rect2(160, 272, 32, 16)
+
+[sub_resource type="Theme" id="Theme_67cto"]
+default_font = ExtResource("2_kyeh0")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,14 +75,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nan7w")
+script = SubResource("GDScript_pr7mv")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 512.0
-offset_top = 87.0
-offset_right = 610.0
-offset_bottom = 110.0
+offset_left = 39.0
+offset_top = 69.0
+offset_right = 1334.0
+offset_bottom = 339.0
+theme = SubResource("Theme_e167l")
+theme_override_font_sizes/font_size = 200
+theme_override_styles/normal = SubResource("StyleBoxTexture_esqte")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -32,13 +103,46 @@ offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RestartButton" type="Button" parent="VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = -131.0
+offset_right = 1507.0
+offset_bottom = 1052.0
+texture = ExtResource("4_d81wt")
+
+[node name="RestartButton" type="Button" parent="."]
 layout_mode = 2
+offset_left = 543.0
+offset_top = 399.0
+offset_right = 837.0
+offset_bottom = 510.0
+theme = SubResource("Theme_2757d")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxTexture_vwbk4")
 text = "Restart"
 
-[node name="ExitButton" type="Button" parent="VBoxContainer"]
+[node name="ExitButton" type="Button" parent="."]
 layout_mode = 2
+offset_left = 598.0
+offset_top = 525.0
+offset_right = 786.0
+offset_bottom = 620.0
+theme = SubResource("Theme_j51ft")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxTexture_e1w06")
 text = "Exit"
 
-[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]
+[node name="FactLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 655.0
+offset_right = 1158.0
+offset_bottom = 992.0
+theme = SubResource("Theme_67cto")
+theme_override_font_sizes/font_size = 61
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_pressed"]

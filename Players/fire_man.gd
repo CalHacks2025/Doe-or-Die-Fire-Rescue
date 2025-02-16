@@ -15,7 +15,9 @@ var water_next_to = 0
 var player_alive = true
 
 var fire_in_range = false
-var fire_damage_cooldown = true
+var deer_in_range = false
+var bunny_in_range = false
+var iframe_cooldown = true # false when iframes active
 
 var hpBar = ""
 var hScale = -1
@@ -40,7 +42,7 @@ func _ready():
 	wr.area_entered.connect(_on_water_entered)
 	wr.area_exited.connect(_on_water_exited)
 	
-	print(speed)
+
 func _on_water_entered(body):
 	if body.name == "water_hit_box":
 		water_next_to += 1
@@ -60,20 +62,38 @@ func _on_bucket_exited(body):
 func _on_body_entered(body):
 	if body.name =="Fire_Hurtbox":
 		fire_in_range = true
+	elif body.name == "deer_hb":
+		deer_in_range = true
+	elif body.name == "bunny_hb":
+		bunny_in_range = true
 
 func _on_body_exited(body: Node):
 	if body.name == "Fire_Hurtbox":
 		fire_in_range = false
-	
-func fire_damage():
-	if fire_in_range and fire_damage_cooldown == true:
-		health = health - 10
-		fire_damage_cooldown = false
-		$damage_cooldown.start()
+	elif body.name == "deer_hb":
+		deer_in_range = false
+	elif body.name == "bunny_hb":
+		bunny_in_range = false
 
+func take_damage(amount: int):
+	health -= amount
+	iframe_cooldown = false
+	$damage_cooldown.start()
+
+func deer_damage():
+	if deer_in_range and iframe_cooldown == true:
+		take_damage(20)
+
+func bunny_damage():
+	if bunny_in_range and iframe_cooldown == true:
+		take_damage(10)
+
+func fire_damage():
+	if fire_in_range and iframe_cooldown == true:
+		take_damage(10)
 
 func _on_damage_cooldown_timeout() -> void:
-	fire_damage_cooldown = true
+	iframe_cooldown = true
 
 func move() -> void:
 	var direction = Vector2.ZERO
@@ -114,8 +134,12 @@ func move() -> void:
 func _on_fire_man_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("fire"):
 		fire_in_range = true
+	if body.name == "deer":
+		deer_in_range = true
+	if body.name == "bunny":
+		bunny_in_range = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not watering:
 		move()
 		if(velocity.x == 0 and velocity.y == 0):
@@ -132,6 +156,7 @@ func _process(delta: float) -> void:
 		for fire in fire_objects:
 			fire.queue_free()
 			fire_died = true
+			GameManager.fires_left -= 1
 		fire_objects.clear() 
 		
 		if fire_died:
@@ -146,9 +171,12 @@ func _process(delta: float) -> void:
 			water_level = 0			
 	
 	fire_damage()
+	deer_damage()
+	bunny_damage()
 	
 	if health <= 0:
 		player_alive = false
+		GameManager.fire_man_alive = false
 		health = 0
 		self.queue_free()
 

@@ -2,11 +2,16 @@ extends Node
 
 var game_over = 0 # 0, -1 lost, 1 won
 var animals_saved = 0
+var total_animals = -1
+var fires_left = -1
 
 #gamestate variables
 var money = 0 # ur broke 
 var TIMEOUT = 30 # default timeout for now
 var timer = Timer.new() 
+
+var fire_man_alive = true
+var animal_rescute_alive = true
 
 # stats/powerups
 var PLAYER_SPEED
@@ -16,8 +21,8 @@ var PICKUP_RADIUS
 var ANIMALRESCUE_TOTALHP
 
 # shop prices // to do
-var SPEED_PRICE = 10
-var HP_PRICE = 10
+var SPEED_PRICE = 15
+var HP_PRICE = 20
 var WATERRANGE_PRICE = 10
 var PICKUPRANGE_PRICE = 10
 
@@ -56,7 +61,20 @@ func timer_reset(seconds):
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if (not fire_man_alive) and (not animal_rescute_alive):
+		game_over = -1
+		get_tree().change_scene_to_file("res://Menus/GameOver.tscn")
+		fire_man_alive = true
+		animal_rescute_alive = true
+		
+	if animals_saved == total_animals and fires_left <= 0:
+		game_over = 1
+		fires_left = -1
+		total_animals = -1
+		animals_saved = 0
+		GameManager.last_money_earned = 100 * (1+(float(timer.time_left) / 60))
+		GameManager.money += 100 * (1+(float(timer.time_left) / 60))
+		get_tree().change_scene_to_file("res://Menus/GameOver.tscn")
 
 func next_level():
 	last_money_earned = int(timer.time_left)

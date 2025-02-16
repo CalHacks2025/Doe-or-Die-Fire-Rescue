@@ -18,6 +18,9 @@ func wait_for_physics():
 
 
 func _ready():
+	if GameManager.total_animals < 0:
+		GameManager.total_animals = 0
+	GameManager.total_animals += 1
 	# Wait before enabling physics due to how navigation agent works
 	set_physics_process(false)
 	call_deferred("wait_for_physics")
@@ -56,10 +59,6 @@ func chase_fireman() -> void:
 		
 		move_and_slide()
 
-func _on_DetectRadius_body_entered(body):
-	# Damage if a fireman
-	if body == fireman:
-		fireman.health -= 10
 
 func _physics_process(_delta):
 	# Check if fireman in range -- chase or move "randomly"

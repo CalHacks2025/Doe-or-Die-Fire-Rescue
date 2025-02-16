@@ -3,6 +3,7 @@ extends CharacterBody2D
 var health = GameManager.player_totalHP
 var SPEED = GameManager.player_speed
 var player_alive = true
+var iframe_cooldown = true # false when iframes active
 var fire_in_range = false
 var drop_in_range = false
 
@@ -95,7 +96,7 @@ func _physics_process(delta: float) -> void:
 				if dist <= mini_dis:
 					mini_dis = dist
 					min_animal = deer
-			if min_animal.name == "Deer":
+			if "Deer" in min_animal.name :
 				deer_in_hand = true
 			else:
 				bunny_in_hand = true
@@ -112,15 +113,22 @@ func _physics_process(delta: float) -> void:
 	fire_kill()
 	if health <=0:
 		player_alive = false
+		GameManager.animal_rescute_alive = false
 		health = 0
 		print("Player has been killed")
 		self.queue_free()
 
-		
+func _on_damage_cooldown_timeout() -> void:
+	iframe_cooldown = true
+
+func take_damage(amount: int):
+	health -= amount
+	iframe_cooldown = false
+	$damage_cooldown.start()
+
 func fire_kill():
-	if fire_in_range:
-		health = 0
-		print("player died")
+	if fire_in_range and iframe_cooldown == true:
+		take_damage(35)
 
 func _on_body_entered(body):
 	if body.name =="Fire_Hurtbox":
