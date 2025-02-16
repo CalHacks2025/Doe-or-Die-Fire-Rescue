@@ -1,10 +1,33 @@
 extends Node
 
 var game_over = 0 # 0, -1 lost, 1 won
+
+#gamestate variables
 var money = 0 # ur broke 
 var TIMEOUT = 30 # default timeout for now
 var timer = Timer.new() 
-#var last_score
+
+# stats/powerups
+var PLAYER_SPEED
+var WATER_RADIUS
+var FIREMAN_TOTALHP
+var PICKUP_RADIUS
+var ANIMALRESCUE_TOTALHP
+
+# shop prices // to do
+var SPEED_PRICE = 10
+var HP_PRICE = 10
+var WATERRANGE_PRICE = 10
+var PICKUPRANGE_PRICE = 10
+
+var player_speed = 0
+var water_radius = 0
+var pickup_radius = 0
+var fireman_totalHP = 0
+var animalRescue_totalHP = 0
+
+# per level
+var last_money_earned = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,10 +54,10 @@ func timer_reset(seconds):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-func calculate_money():
-	var amount = int(timer.time_left) # money you get equals time left for now
-	add_money(amount)
+
+func next_level():
+	last_money_earned = int(timer.time_left)
+	add_money(last_money_earned)
 	
 func add_money(amount):
 	money += amount
@@ -49,7 +72,32 @@ func spend_money(amount):
 		print("Not enough money!")
 		return false
 		
+		
+# ============= powerup functions : change values
+func buy_speed():
+	if spend_money(SPEED_PRICE):
+		print("Speed bought")
+		player_speed *= 2
+	
+func buy_hp():
+	if spend_money(HP_PRICE):
+		print("hp bought")
+		fireman_totalHP += 1
+		animalRescue_totalHP += 1
+
+func buy_waterRange():
+	if spend_money(WATERRANGE_PRICE):
+		print("water range bought")
+		water_radius += 1
+	
+func buy_pickupRange():
+	if spend_money(PICKUPRANGE_PRICE):
+		print("pickup range bought")
+		pickup_radius += 1
+
+		
 func _on_timer_timeout():
 	print("timed out: game lost")
+	last_money_earned = 0
 	game_over = -1
 	get_tree().change_scene_to_file("res://Menus/GameOver.tscn")

@@ -1,20 +1,35 @@
 extends Control
 
 @onready var money_field = $MoneyField 
+@onready var earned_field = $MoneyEarnedField 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if GameManager.money:
-		money_field.text = "$ %0d" % GameManager.money
+	if GameManager.last_money_earned:
+		earned_field.text = "You earned $ %0d" % GameManager.last_money_earned
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if GameManager.money:
+		money_field.text = "$ %0d" % GameManager.money
 
 
 func _on_continue_pressed() -> void:
 	get_tree().change_scene_to_file("res://Menus/GameOver.tscn") # change to next level
 	
 	
-# todo: add methods for button presses (item selection)
-# todo: coin/price
+func _on_buy_speed_pressed() -> void:
+	GameManager.buy_speed()
+
+
+func _on_buy_hp_pressed() -> void:
+	GameManager.buy_hp()
+
+
+func _on_buy_water_pressed() -> void:
+	GameManager.buy_waterRange()
+
+
+func _on_buy_pickup_pressed() -> void:
+	GameManager.buy_pickupRange()

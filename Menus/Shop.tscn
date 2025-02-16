@@ -60,17 +60,21 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Item1Button" type="Button" parent="HBoxContainer"]
+[node name="buy_speed_button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "item1"
+text = "speed++"
 
-[node name="Item2Button" type="Button" parent="HBoxContainer"]
+[node name="buy_hp_button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "item2"
+text = "hp++"
 
-[node name="Item3Button" type="Button" parent="HBoxContainer"]
+[node name="buy_water_button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "item3"
+text = "water++"
+
+[node name="buy_pickup_button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "pickup++"
 
 [node name="ContinueButton" type="Button" parent="."]
 layout_mode = 0
@@ -83,10 +87,10 @@ script = SubResource("GDScript_4fqv2")
 
 [node name="MoneyField" type="Label" parent="."]
 layout_mode = 0
-offset_left = 779.0
-offset_top = 230.0
-offset_right = 902.0
-offset_bottom = 294.0
+offset_left = 675.0
+offset_top = 220.0
+offset_right = 798.0
+offset_bottom = 284.0
 
 [node name="Title2" type="Label" parent="."]
 layout_mode = 0
@@ -96,4 +100,15 @@ offset_right = 658.0
 offset_bottom = 106.0
 text = "Level complete! "
 
+[node name="MoneyEarnedField" type="Label" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 122.0
+offset_right = 714.0
+offset_bottom = 212.0
+
+[connection signal="pressed" from="HBoxContainer/buy_speed_button" to="." method="_on_buy_speed_pressed"]
+[connection signal="pressed" from="HBoxContainer/buy_hp_button" to="." method="_on_buy_hp_pressed"]
+[connection signal="pressed" from="HBoxContainer/buy_water_button" to="." method="_on_buy_water_pressed"]
+[connection signal="pressed" from="HBoxContainer/buy_pickup_button" to="." method="_on_buy_pickup_pressed"]
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]

@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	#pass
 
 func _on_scene_exit():
-	GameManager.calculate_money()
+	GameManager.next_level()
 	GameManager.timer_stop()
 
 func _on_button_pressed() -> void:
