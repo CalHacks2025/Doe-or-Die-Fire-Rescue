@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://bp5eq3qwnx5lf"]
+[gd_scene load_steps=16 format=3 uid="uid://bp5eq3qwnx5lf"]
 
 [ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_fhkcx"]
+[ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_iq76f"]
 [ext_resource type="FontFile" uid="uid://vxgjg3p71pyn" path="res://assets/Fonts/mago3.ttf" id="2_sxpaf"]
 [ext_resource type="Texture2D" uid="uid://dcs3p3xc8fqm1" path="res://assets/gui/background/88c1ba87-34b9-4075-9db6-44ac78eafb30-0.png" id="3_qynk0"]
 [ext_resource type="FontFile" uid="uid://dpksqjtkg6stf" path="res://assets/Fonts/mago1.ttf" id="3_rsmx6"]
 [ext_resource type="Texture2D" uid="uid://cfyxpke5a1moi" path="res://assets/UI assets pack 2/UI assets pack 2/UI books & more.png" id="5_728s4"]
+[ext_resource type="PackedScene" path="res://Animals/bunny.tscn" id="6_mcvii"]
+[ext_resource type="PackedScene" uid="uid://d2khrcrwhwbyr" path="res://Animals/deer.tscn" id="7_cdjao"]
 
 [sub_resource type="Theme" id="Theme_bdxb2"]
 
@@ -50,6 +53,26 @@ offset_right = 1492.0
 offset_bottom = 1150.0
 theme = SubResource("Theme_bdxb2")
 color = Color(0.246433, 0.408049, 0.236168, 1)
+
+[node name="fire_man" parent="." instance=ExtResource("2_iq76f")]
+position = Vector2(3898, -1036)
+
+[node name="Deer" parent="." instance=ExtResource("7_cdjao")]
+position = Vector2(1167, 442)
+rotation = 3.14159
+scale = Vector2(4, -4)
+
+[node name="Deer2" parent="." instance=ExtResource("7_cdjao")]
+position = Vector2(236, 768)
+scale = Vector2(4, 4)
+
+[node name="Bunny" parent="." instance=ExtResource("6_mcvii")]
+position = Vector2(1233, 800)
+scale = Vector2(10, 10)
+
+[node name="Bunny2" parent="." instance=ExtResource("6_mcvii")]
+position = Vector2(243, 385)
+scale = Vector2(10, 10)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0

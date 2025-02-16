@@ -291,7 +291,7 @@ height = 52.0
 radius = 17.0
 height = 52.0
 
-[node name="Fire" type="CharacterBody2D"]
+[node name="Fire2" type="CharacterBody2D"]
 script = ExtResource("1_p4bld")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

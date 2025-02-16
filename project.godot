@@ -27,6 +27,10 @@ window/size/viewport_height=1050
 window/size/mode=3
 window/stretch/mode="viewport"
 
+[global_group]
+
+flammable=""
+
 [input]
 
 move_left_a={
