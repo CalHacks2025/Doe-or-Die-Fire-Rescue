@@ -6,6 +6,5 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="fire_man" parent="." instance=ExtResource("1_xg3qm")]
-
 [node name="animal_rescue" parent="." instance=ExtResource("2_w4a0o")]
 position = Vector2(486, 171)
