@@ -14,7 +14,7 @@ config/name="Calgary-Hacks-2025"
 run/main_scene="res://Menus/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
-<<<<<<<HEADrun/main_scene="res://world.tscn"
+run/main_scene="res://world.tscn"
 
 [autoload]
 
