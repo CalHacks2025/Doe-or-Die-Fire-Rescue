@@ -1,8 +1,8 @@
-[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://bcbcfct43egxt"]
+[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://odj4ryxu7515"]
 
 [ext_resource type="Texture2D" uid="uid://db0aufapdc64q" path="res://assets/Pixel Adventure 1/Free/Tilemap_Flat.png" id="1_w577i"]
-[ext_resource type="Texture2D" uid="uid://cg8elle57cyoe" path="res://assets/AnimatedTreeFree/AnimatedTreeFree/zeo254-completed-commission.png" id="2_jbnxa"]
-[ext_resource type="Texture2D" uid="uid://7y2uiaohb6h" path="res://assets/AnimatedTreeFree/AnimatedTreeFree/AnimatedAutum.png" id="3_17lt8"]
+[ext_resource type="Texture2D" uid="uid://dyg2fd04ltfk7" path="res://assets/AnimatedTreeFree/AnimatedTreeFree/zeo254-completed-commission.png" id="2_jbnxa"]
+[ext_resource type="Texture2D" uid="uid://da24ohpaq0uo2" path="res://assets/AnimatedTreeFree/AnimatedTreeFree/AnimatedAutum.png" id="3_17lt8"]
 [ext_resource type="Texture2D" uid="uid://mj1qgfgpat7b" path="res://Tiny Swords/Tiny Swords (Update 010)/Resources/Trees/Tree.png" id="3_57dad"]
 [ext_resource type="Texture2D" uid="uid://cvyqcpgo4uiqa" path="res://Tiny Swords/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="4_euxxt"]
 [ext_resource type="Texture2D" uid="uid://dqxbq1k1oqb1x" path="res://Tiny Swords/Tiny Swords (Update 010)/Deco/09.png" id="4_h0ra1"]
