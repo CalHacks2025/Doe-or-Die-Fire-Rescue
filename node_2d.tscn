@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjotyrkw8e2br"]
+[gd_scene load_steps=3 format=3 uid="uid://bkpio1f5ksbp5"]
 
-[ext_resource type="Texture2D" uid="uid://davpk7et62udo" path="res://Pixel Adventure 1/Free/Background/Brown.png" id="1_gpv3a"]
-[ext_resource type="Texture2D" uid="uid://tmwyevsvl4ps" path="res://Pixel Adventure 1/Free/Main Characters/Mask Dude/Jump (32x32).png" id="2_uyg3d"]
+[ext_resource type="Texture2D" uid="uid://cdmquuh8m8qtg" path="res://assets/Pixel Adventure 1/Free/Background/Brown.png" id="1_gpv3a"]
+[ext_resource type="Texture2D" uid="uid://dgy5av0dmt06m" path="res://assets/Pixel Adventure 1/Free/Main Characters/Mask Dude/Jump (32x32).png" id="2_uyg3d"]
 
 [node name="Node2D" type="Node2D"]
 
