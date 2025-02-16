@@ -10,6 +10,6 @@ func _ready():
 func _process(delta):
 	var parent = get_parent()
 	if not parent.deer_in_hand:
-		modulate.a8 = 75
+		self.modulate.a8 = 75
 	else:
-		modulate.a8 = 0
+		self.modulate.a8 = 0

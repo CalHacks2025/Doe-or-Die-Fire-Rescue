@@ -73,10 +73,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gtup7"]
-radius = 164.11
+radius = 121.017
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hwtco"]
-radius = 434.166
+radius = 198.003
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mqmgq"]
 radius = 21.0
@@ -85,8 +85,8 @@ radius = 21.0
 script = ExtResource("1_tl86y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -18)
-scale = Vector2(2, 2)
+position = Vector2(0, -39)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_4qj0o")
 animation = &"idle"
 
@@ -98,9 +98,13 @@ shape = SubResource("CircleShape2D_gtup7")
 [node name="deer_deagro" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deer_deagro"]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_hwtco")
 
 [node name="deer_hb" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deer_hb"]
 shape = SubResource("CircleShape2D_mqmgq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1

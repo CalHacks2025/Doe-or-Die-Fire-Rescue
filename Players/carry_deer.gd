@@ -13,9 +13,9 @@ func _ready():
 func _process(delta):
 	var parent = get_parent()
 	if parent.deer_in_hand:
-		modulate.a8 = 100
+		self.modulate.a8 = 100
 	else:
-		modulate.a8 = 0
+		self.modulate.a8 = 0
 	
 	if parent.anime.scale.x < 0:
 		scale.x = aScale

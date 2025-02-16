@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://odj4ryxu7515"]
+[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://bcbcfct43egxt"]
 
 [ext_resource type="Texture2D" uid="uid://db0aufapdc64q" path="res://assets/Pixel Adventure 1/Free/Tilemap_Flat.png" id="1_w577i"]
 [ext_resource type="Texture2D" uid="uid://cg8elle57cyoe" path="res://assets/AnimatedTreeFree/AnimatedTreeFree/zeo254-completed-commission.png" id="2_jbnxa"]
