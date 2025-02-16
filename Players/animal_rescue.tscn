@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b4juqgpghx6rn"]
 
-[ext_resource type="Texture2D" uid="uid://cpbchya8p1qss" path="res://assets/Pixel Adventure 1/Free/Main Characters/Virtual Guy/Fall (32x32).png" id="1_btvqa"]
+[ext_resource type="Texture2D" uid="uid://c55dtceypyhfv" path="res://assets/Pixel Adventure 1/Free/Main Characters/Virtual Guy/Fall (32x32).png" id="1_btvqa"]
 [ext_resource type="Script" path="res://Players/animal_rescue.gd" id="1_ir31v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_exa6c"]

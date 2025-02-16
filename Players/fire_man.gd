@@ -12,21 +12,16 @@ var curr_hp: int = 3
 var is_invincible: bool = false
 var iframe_duration: float = 0.5
 
-func die():
-	# Respawn
-	
-	queue_free()
+func _ready():
+	add_to_group("fire_man")
 
 func take_damage(amount : int):
 	if is_invincible:
 		return
 		
 	curr_hp -= amount
-	if curr_hp <= 0:
-		die()
-	else:
-		is_invincible = true
-		await get_tree().create_timer(iframe_duration).timeout
+	is_invincible = true
+	await get_tree().create_timer(iframe_duration).timeout
 
 func move() -> void:
 	var direction = Vector2.ZERO
