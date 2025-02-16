@@ -1,9 +1,9 @@
 [gd_scene load_steps=53 format=3 uid="uid://b4juqgpghx6rn"]
 
 [ext_resource type="Script" path="res://Players/animal_rescue.gd" id="1_ir31v"]
-[ext_resource type="Texture2D" uid="uid://c7srw8nd73yb7" path="res://assets/custom assets/ranger_idle.png" id="3_s8fgk"]
-[ext_resource type="Texture2D" uid="uid://jvp2wjfeloce" path="res://assets/custom assets/ranger_walk.png" id="4_6uaxc"]
-[ext_resource type="Texture2D" uid="uid://c7o55k28y7mpp" path="res://assets/custom assets/ranger_pickup.png" id="4_muly8"]
+[ext_resource type="Texture2D" uid="uid://cest32o0odwh8" path="res://assets/custom assets/ranger_idle.png" id="3_s8fgk"]
+[ext_resource type="Texture2D" uid="uid://1dahvp0mqgcs" path="res://assets/custom assets/ranger_walk.png" id="4_6uaxc"]
+[ext_resource type="Texture2D" uid="uid://cp5c6xpxnj4f6" path="res://assets/custom assets/ranger_pickup.png" id="4_muly8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6s6na"]
 atlas = ExtResource("3_s8fgk")
@@ -382,10 +382,6 @@ animation = &"walk_forwards"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="animal_rescue_hitbox"]
 position = Vector2(-1, -1)
 shape = SubResource("CapsuleShape2D_lumua")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-216, -170)
-polygon = PackedVector2Array(210, 159, 215, 157, 217, 161, 219, 159, 220, 159, 223, 159, 225, 163, 226, 172, 225, 180, 224, 187, 207, 187, 205, 179, 202, 159)
 
 [connection signal="body_entered" from="animal_rescue_hitbox" to="." method="_on_animal_rescue_hitbox_body_entered"]
 [connection signal="body_exited" from="animal_rescue_hitbox" to="." method="_on_animal_rescue_hitbox_body_exited"]

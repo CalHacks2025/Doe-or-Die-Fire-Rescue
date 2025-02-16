@@ -1,10 +1,9 @@
 extends CharacterBody2D
 
-var speed = GameManager.player_speed
-var health = GameManager.player_totalHP
-
 var anime =""
 var aScale = -1
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
 var watering = false
 var lastLeft = false
 
@@ -12,6 +11,7 @@ var water_level = 10
 var fire_objects = [] 
 var water_next_to = 0
 
+var health = 100
 var player_alive = true
 
 var fire_in_range = false
@@ -34,8 +34,6 @@ func _ready():
 	var wr = $"water_range"
 	wr.area_entered.connect(_on_water_entered)
 	wr.area_exited.connect(_on_water_exited)
-	
-	print(speed)
 func _on_water_entered(body):
 	if body.name == "water_hit_box":
 		water_next_to += 1
@@ -103,7 +101,7 @@ func move() -> void:
 			
 		direction = direction.normalized()
 	
-	velocity = direction * speed
+	velocity = direction * SPEED
 	move_and_slide()
 
 func _on_fire_man_hitbox_body_entered(body: Node2D) -> void:

@@ -1,36 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bp5eq3qwnx5lf"]
+[gd_scene load_steps=2 format=3 uid="uid://bp5eq3qwnx5lf"]
 
 [ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_fhkcx"]
-[ext_resource type="FontFile" uid="uid://c1n7erivxc3cl" path="res://assets/Fonts/mago3.ttf" id="2_sxpaf"]
-[ext_resource type="Texture2D" uid="uid://bxlydntt7c00d" path="res://assets/gui/background/88c1ba87-34b9-4075-9db6-44ac78eafb30-0.png" id="3_qynk0"]
-[ext_resource type="FontFile" uid="uid://coji67u7tt7kp" path="res://assets/Fonts/mago1.ttf" id="3_rsmx6"]
-[ext_resource type="Texture2D" uid="uid://cfyxpke5a1moi" path="res://assets/UI assets pack 2/UI assets pack 2/UI books & more.png" id="5_728s4"]
-
-[sub_resource type="Theme" id="Theme_bdxb2"]
-
-[sub_resource type="Theme" id="Theme_0syn7"]
-default_font = ExtResource("2_sxpaf")
-default_font_size = 200
-
-[sub_resource type="Theme" id="Theme_rk87m"]
-default_font = ExtResource("3_rsmx6")
-default_font_size = 100
-
-[sub_resource type="Theme" id="Theme_vb4xs"]
-default_font = ExtResource("3_rsmx6")
-default_font_size = 75
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d04q8"]
-texture = ExtResource("5_728s4")
-region_rect = Rect2(288, 272, 32, 16)
-
-[sub_resource type="Theme" id="Theme_3e7e4"]
-default_font = ExtResource("3_rsmx6")
-default_font_size = 60
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_626b0"]
-texture = ExtResource("5_728s4")
-region_rect = Rect2(160, 272, 32, 16)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -41,78 +11,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fhkcx")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -1
-layout_mode = 0
-offset_left = -122.0
-offset_top = -64.0
-offset_right = 1492.0
-offset_bottom = 1150.0
-theme = SubResource("Theme_bdxb2")
-color = Color(0.246433, 0.408049, 0.236168, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 287.0
-offset_top = 267.0
-offset_right = 1094.0
-offset_bottom = 546.0
-theme = SubResource("Theme_0syn7")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 11
-theme_override_constants/shadow_outline_size = 25
-text = "Doe or Die"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = 484.0
-offset_top = 410.0
-offset_right = 1291.0
-offset_bottom = 689.0
-theme = SubResource("Theme_rk87m")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 11
-theme_override_constants/shadow_outline_size = 25
-text = "Fire Rescue"
-
-[node name="TextureRect" type="TextureRect" parent="."]
-z_index = -1
-layout_mode = 0
-offset_left = 1.0
-offset_top = -4.0
-offset_right = 1401.0
-offset_bottom = 566.0
-texture = ExtResource("3_qynk0")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 452.0
-offset_top = 591.0
-offset_right = 918.0
-offset_bottom = 779.0
+offset_left = 356.0
+offset_top = 278.0
+offset_right = 798.0
+offset_bottom = 357.0
 
-[node name="StartButton" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-offset_left = 452.0
-offset_top = 591.0
-offset_right = 918.0
-offset_bottom = 741.0
-theme = SubResource("Theme_vb4xs")
-theme_override_styles/normal = SubResource("StyleBoxTexture_d04q8")
 text = "Start"
 
-[node name="ExitButton" type="Button" parent="."]
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-offset_left = 456.0
-offset_top = 753.0
-offset_right = 919.0
-offset_bottom = 918.0
-theme = SubResource("Theme_3e7e4")
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.505882, 0.156863, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_626b0")
 text = "Exit"
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="ExitButton" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]
