@@ -1,13 +1,13 @@
-[gd_scene load_steps=10 format=4 uid="uid://cspcdry0dqbo8"]
+[gd_scene load_steps=10 format=4 uid="uid://ceuucg1ij8bgp"]
 
 [ext_resource type="TileSet" uid="uid://bcbcfct43egxt" path="res://Tilesets.tres" id="1_c84qd"]
 [ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_em7iw"]
 [ext_resource type="PackedScene" uid="uid://d2khrcrwhwbyr" path="res://Animals/deer.tscn" id="3_cp728"]
-[ext_resource type="PackedScene" uid="uid://rn5vh73s3gij" path="res://Objects/water.tscn" id="3_x87bv"]
+[ext_resource type="PackedScene" uid="uid://dyvnsjxxfewmb" path="res://Objects/water.tscn" id="3_x87bv"]
 [ext_resource type="PackedScene" uid="uid://bjk078xx4dhtc" path="res://Objects/deer_drop_off.tscn" id="4_464ew"]
 [ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Players/animal_rescue.tscn" id="4_ox2bs"]
-[ext_resource type="PackedScene" uid="uid://u1j7yt73gka5" path="res://Animals/bunny.tscn" id="5_v1iat"]
-[ext_resource type="PackedScene" uid="uid://vfloha6x3wmi" path="res://Objects/fire.tscn" id="7_tww5s"]
+[ext_resource type="PackedScene" uid="uid://c63olc2jt6tta" path="res://Animals/bunny.tscn" id="5_v1iat"]
+[ext_resource type="PackedScene" uid="uid://d3hmnxo8uu4nh" path="res://Objects/fire.tscn" id="7_tww5s"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1usv0"]
 vertices = PackedVector2Array(13.1328, 447.977, 517.758, 447.008, 514.219, 601.062, 364.539, 602.062, 16.8594, 731.781, 111.07, 729.781, 910.219, 935, 909.219, 889, 1002.15, 889, 1003.91, 1007.47, 977.141, 1024.01, 887, 935, 751.961, 1024.98, 830, 937, 740, 1013.68, 740, 890.883, 803, 890.117, 803, 937, -35.5703, 1022.92, -39.5781, 1049, -191.898, 1049, -190.094, 863.938, -40, 1002, -40, 863.047, 97, 1002, 97.2422, 1024.09, 887, 810.156, 830, 811.031, 518.961, 809.969, 391.922, 809, 392.922, 682.117, 550.93, 684.133, 1079, 807.148, 285.812, 1130, 236, 905, 236, 809, 377.719, 1097.62, 292.719, 1157.67, 406.391, 1181, 458, 1181, 458, 1255.07, 395.367, 1243.07, 83.7891, 1257.91, 259.523, 1241.92, 92.9766, 1201.93, 253.438, 1130, 212.812, 905, 97, 905, 109.938, 905, 551.922, 544.031, 1075.36, 545.961, 1079, 570.703, 357.539, 727.062, 216.188, 728.07, 373.656, 1154.37, 519.961, 1097.33, 487.469, 1101.97)
