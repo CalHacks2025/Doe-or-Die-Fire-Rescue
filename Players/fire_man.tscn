@@ -1,11 +1,11 @@
 [gd_scene load_steps=51 format=3 uid="uid://clt8fnfsw7qi1"]
 
 [ext_resource type="Script" path="res://Players/fire_man.gd" id="1_oq64c"]
-[ext_resource type="Texture2D" uid="uid://bd7g4vst5p5ra" path="res://assets/blue_circle.png" id="2_v2iap"]
+[ext_resource type="Texture2D" uid="uid://d1orqnsxixc4r" path="res://assets/blue_circle.png" id="2_v2iap"]
 [ext_resource type="Script" path="res://Players/circle.gd" id="3_jxnao"]
-[ext_resource type="Texture2D" uid="uid://dstlrhamu67ui" path="res://assets/custom assets/fireman_watering.png" id="4_bi1ow"]
-[ext_resource type="Texture2D" uid="uid://cmgequnhpbl30" path="res://assets/custom assets/fireman_idle.png" id="5_jt5h5"]
-[ext_resource type="Texture2D" uid="uid://c5arql7q0c6bi" path="res://assets/custom assets/fireman_walk.png" id="6_6p2or"]
+[ext_resource type="Texture2D" uid="uid://cjt5eoa2vfc8c" path="res://assets/custom assets/fireman_watering.png" id="4_bi1ow"]
+[ext_resource type="Texture2D" uid="uid://dhye73t6fb8bh" path="res://assets/custom assets/fireman_idle.png" id="5_jt5h5"]
+[ext_resource type="Texture2D" uid="uid://dmg04kjplxxjc" path="res://assets/custom assets/fireman_walk.png" id="6_6p2or"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydddw"]
 radius = 19.0

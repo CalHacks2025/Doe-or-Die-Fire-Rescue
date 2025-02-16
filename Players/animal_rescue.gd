@@ -64,7 +64,6 @@ func _physics_process(delta: float) -> void:
 func fire_kill():
 	if fire_in_range:
 		health = 0
-		GameManager.animalRescue_totalHP = 0
 		print("player died")
 
 func _on_body_entered(body):
