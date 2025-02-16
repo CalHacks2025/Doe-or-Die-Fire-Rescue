@@ -1,7 +1,5 @@
 extends Control
 
-@onready var label = $Label
-@onready var factLabel = $FactLabel
 
 var facts = ["The average number of people exposed to heatwaves has increased by approximately 125 million since the beginning of the century.
 ", "These broader climate changes include: rising sea levels, shrinking mountain glaciers, accelerating ice melt in Greenland, Antarctica and the Arctic, and shifts in flower and plant blooming times.", 
@@ -11,7 +9,9 @@ var facts = ["The average number of people exposed to heatwaves has increased by
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	var label = $"Label"
+	var factLabel = $"FactLabel"
+
 	var random_fact = facts.pick_random()
 	factLabel.text = random_fact
 	
