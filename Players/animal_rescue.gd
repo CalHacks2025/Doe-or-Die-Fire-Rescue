@@ -12,9 +12,13 @@ var deer_in_hand = false
 var anime = ""
 var aScale = -1
 
-
+var hpBar = ""
+var hScale = -1
 
 func _ready():
+	hpBar = $"GreenHp"
+	hScale = hpBar.scale.x
+	
 	var animal_rescute_hitbox = $"animal_rescue_hitbox"
 	animal_rescute_hitbox.area_entered.connect(_on_body_entered)  # Correct in Godot 4
 	animal_rescute_hitbox.area_exited.connect(_on_body_exited)
@@ -72,6 +76,10 @@ func move() -> void:
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
+	
+	var pHealth = float(health) / float(GameManager.player_totalHP)
+	hpBar.scale.x = hScale * pHealth
+	
 	move()
 	if(velocity.x == 0 and velocity.y == 0):
 		anime.play("idle_forwards")

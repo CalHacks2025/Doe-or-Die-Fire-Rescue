@@ -1,13 +1,15 @@
-[gd_scene load_steps=67 format=3 uid="uid://b4juqgpghx6rn"]
+[gd_scene load_steps=69 format=3 uid="uid://b4juqgpghx6rn"]
 
 [ext_resource type="Script" path="res://Players/animal_rescue.gd" id="1_ir31v"]
-[ext_resource type="Texture2D" uid="uid://doejyvg573iej" path="res://assets/brown_circle.png" id="2_87538"]
+[ext_resource type="Texture2D" uid="uid://doejyvg573iej" path="res://assets/custom assets/brown_circle.png" id="2_87538"]
 [ext_resource type="Texture2D" uid="uid://bkefqlwju6uuq" path="res://assets/custom assets/ranger_idle.png" id="3_s8fgk"]
 [ext_resource type="Script" path="res://Players/brown_circle.gd" id="3_wm05r"]
 [ext_resource type="Texture2D" uid="uid://4uapmpwy2jxt" path="res://assets/custom assets/ranger_walk.png" id="4_6uaxc"]
 [ext_resource type="Texture2D" uid="uid://dx4l8amumaaxi" path="res://assets/custom assets/ranger_pickup.png" id="4_muly8"]
 [ext_resource type="Texture2D" uid="uid://bchjxxbnfg8tg" path="res://assets/MinifolksForestAnimals/Outline/MiniDeer1.png" id="5_ianrj"]
 [ext_resource type="Script" path="res://Players/carry_deer.gd" id="6_3551k"]
+[ext_resource type="Texture2D" uid="uid://dgnnob0pf2dfc" path="res://assets/custom assets/red_hp.png" id="9_en4by"]
+[ext_resource type="Texture2D" uid="uid://s4juamxlyd4f" path="res://assets/custom assets/green_hp.png" id="10_ytn6a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lxm50"]
 radius = 68.0294
@@ -481,6 +483,17 @@ scale = Vector2(3.12922, 3.01862)
 sprite_frames = SubResource("SpriteFrames_lxpqv")
 animation = &"idle"
 script = ExtResource("6_3551k")
+
+[node name="RedHp" type="Sprite2D" parent="."]
+position = Vector2(0, 27)
+scale = Vector2(0.5, 1)
+texture = ExtResource("9_en4by")
+
+[node name="GreenHp" type="Sprite2D" parent="."]
+position = Vector2(-32, 23)
+scale = Vector2(0.5, 1)
+texture = ExtResource("10_ytn6a")
+centered = false
 
 [connection signal="body_entered" from="animal_rescue_hitbox" to="." method="_on_animal_rescue_hitbox_body_entered"]
 [connection signal="body_exited" from="animal_rescue_hitbox" to="." method="_on_animal_rescue_hitbox_body_exited"]
