@@ -1,6 +1,7 @@
 extends Node
 
 var game_over = 0 # 0, -1 lost, 1 won
+var animals_saved = 0
 
 #gamestate variables
 var money = 0 # ur broke 
