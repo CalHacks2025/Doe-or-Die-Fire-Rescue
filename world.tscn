@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=4 uid="uid://cspcdry0dqbo8"]
+[gd_scene load_steps=5 format=4 uid="uid://cspcdry0dqbo8"]
 
 [ext_resource type="TileSet" uid="uid://odj4ryxu7515" path="res://Tilesets.tres" id="1_c84qd"]
 [ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_em7iw"]
@@ -49,7 +49,7 @@ tile_map_data = PackedByteArray("AAAVADEACgAEAAIAAAAVADkACgAEAAoAAAAWADoACgAFAAs
 tile_set = ExtResource("1_c84qd")
 
 [node name="fire_man" parent="." instance=ExtResource("2_em7iw")]
-position = Vector2(-58, 1184)
+position = Vector2(161, 1358)
 
 [node name="animal_rescue" parent="." instance=ExtResource("4_ox2bs")]
 position = Vector2(171, 1319)

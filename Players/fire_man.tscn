@@ -336,6 +336,7 @@ animations = [{
 }]
 
 [node name="fire_man" type="CharacterBody2D"]
+position = Vector2(-13, 43)
 script = ExtResource("1_oq64c")
 
 [node name="circle" type="Sprite2D" parent="."]
