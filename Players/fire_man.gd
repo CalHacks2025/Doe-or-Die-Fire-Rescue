@@ -16,6 +16,7 @@ var fire_in_range = false
 var fire_damage_cooldown = true
 
 func _ready():
+	add_to_group("fire_man")
 	var fmhb = $"fire_man_hitbox"
 	fmhb.area_entered.connect(_on_body_entered)  
 	fmhb.area_exited.connect(_on_body_exited)
