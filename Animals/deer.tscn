@@ -68,7 +68,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_nvf1s")
 }],
 "loop": true,
-"name": &"walking",
+"name": &"moving",
 "speed": 5.0
 }]
 
@@ -86,7 +86,7 @@ script = ExtResource("1_tl86y")
 position = Vector2(0, -18)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4qj0o")
-animation = &"idle"
+animation = &"moving"
 
 [node name="deer_agro" type="Area2D" parent="."]
 position = Vector2(-49, 1)

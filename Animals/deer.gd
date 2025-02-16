@@ -5,21 +5,13 @@ extends CharacterBody2D
 @export var random_move_interval: float = 2.0  # Time between random direction changes
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
-# Init random stuff to 0 for now
-var random_direction: Vector2 = Vector2.ZERO
-var random_move_timer: float = 0.0
-
 const SPEED = 175
 var is_chasing: bool = false
-
-func get_random_direction() -> Vector2:
-	# Generate a random direction vector
-	var angle = randf_range(0, 2 * PI)
-	return Vector2(cos(angle), sin(angle)).normalized()
 
 func wait_for_physics():
 	await get_tree().physics_frame
 	set_physics_process(true)
+
 
 func _ready():
 	# Wait before enabling physics due to how navigation agent works
@@ -27,7 +19,7 @@ func _ready():
 	call_deferred("wait_for_physics")
 	
 	fireman = get_tree().get_nodes_in_group("fire_man")[0] # Set fireman entity to chase
-	#$AnimatedSprite2D.play("idle")
+	$AnimatedSprite2D.play("idle")
 	
 	# Setup area for aggro (chasing behaviour) towards fireman
 	var da = $"deer_agro"
@@ -35,18 +27,19 @@ func _ready():
 	
 	var dna = $"deer_deagro"
 	dna.area_exited.connect(_on_aggro_exited)
-	
-	# Initialize random movement
-	#random_direction = get_random_direction()
-	#random_move_timer = random_move_interval
+
 
 func _on_aggro_entered(body):
 	if body.name == "fire_man_hitbox":
 		is_chasing = true
+		$AnimatedSprite2D.play("moving")
+
 
 func _on_aggro_exited(body):
 	if body.name == "fire_man_hitbox":
 		is_chasing = false
+		$AnimatedSprite2D.play("idle")
+
 
 # Head towards fireman if aggroed
 func chase_fireman() -> void:
@@ -58,13 +51,6 @@ func chase_fireman() -> void:
 		rotation = velocity.angle()
 		
 		move_and_slide()
-		$AnimatedSprite2D.play("walking")
-
-# Head in a pseudo random fashion
-func move_random() -> void:
-	velocity = Vector2.ZERO
-	pass
-	
 
 #func _on_DetectRadius_body_entered(body):
 	## Damage if a fireman
@@ -81,5 +67,3 @@ func _physics_process(_delta):
 	# Check if fireman in range -- chase or move "randomly"
 	if is_chasing:
 		chase_fireman()
-	else:
-		move_random()
