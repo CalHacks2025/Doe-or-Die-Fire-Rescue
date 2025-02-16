@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyrtkca214y6o"]
+[gd_scene load_steps=3 format=3 uid="uid://dmunu5vbrsaur"]
 
 [ext_resource type="PackedScene" uid="uid://d2khrcrwhwbyr" path="res://Animals/deer.tscn" id="1_5gobf"]
 [ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_c7gcj"]

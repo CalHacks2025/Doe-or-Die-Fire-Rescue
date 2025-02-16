@@ -28,8 +28,8 @@ func _ready():
 	dna.area_exited.connect(_on_aggro_exited)
 	
 	# Initialize random movement
-	#random_direction = get_random_direction()
-	#random_move_timer = random_move_interval
+	random_direction = get_random_direction()
+	random_move_timer = random_move_interval
 
 func _on_aggro_entered(body):
 	if body.name == "fire_man_hitbox":
@@ -40,34 +40,50 @@ func _on_aggro_exited(body):
 		is_chasing = false
 
 # Head towards fireman if aggroed
-func chase_fireman() -> void:
-	velocity = Vector2.ZERO
-	if fireman:
-		# Calculate direction to the player and move
-		velocity = position.direction_to(fireman.position) * SPEED
-		move_and_slide()
-		$AnimatedSprite2D.play("walking")
+func chase_fireman(delta: float) -> void:
+	#print("Chasing")
+	## Calculate direction to the player and move
+	#var direction = global_position.direction_to(fireman.global_position)
+	#var target_velocity = direction * SPEED
+#
+	## Smoothly interpolate towards the target velocity
+	#velocity = velocity.lerp(target_velocity, delta * 10.0)
+	#move_and_slide()
+	# Calculate the direction and move towards the target
+	var direction = (fireman.global_position - global_position).normalized()
+	global_position = global_position.move_toward(fireman.global_position, SPEED * delta)
+	$AnimatedSprite2D.play("walking")
+	rotation = direction.angle()
 
 # Head in a pseudo random fashion
-func move_random() -> void:
-	velocity = Vector2.ZERO
-	pass
+func move_random(delta: float) -> void:
+	random_move_timer -= delta
+	if random_move_timer <= 0:
+		# Change direction after the timer runs out
+		random_direction = get_random_direction()
+		random_move_timer = random_move_interval
+
+	# Smoothly interpolate towards the random direction
+	var target_velocity = random_direction * SPEED
+	velocity = velocity.lerp(target_velocity, delta * 10.0)
+	move_and_slide()
+	$AnimatedSprite2D.play("walking")
 	
 
-#func _on_DetectRadius_body_entered(body):
-	## Damage if a fireman
-	#if body == fireman:
-		#fireman.take_damage(10)
-#
-## Distance the animal away from fireman to avoid recollision
-#func _on_DetectRadius_body_exited(body):
-	#if body == fireman:
-		#velocity = -position.direction_to(fireman.position) * 1/10 * SPEED
-		#move_and_slide()
+func _on_DetectRadius_body_entered(body):
+	# Damage if a fireman
+	if body == fireman:
+		fireman.take_damage(10)
 
-func _process(_delta):
+# Distance the animal away from fireman to avoid recollision
+func _on_DetectRadius_body_exited(body):
+	if body == fireman:
+		velocity = -position.direction_to(fireman.position) * 0.01 * SPEED
+		move_and_slide()
+
+func _physics_process(delta):
 	# Check if fireman in range -- chase or move randomly
 	if is_chasing:
-		chase_fireman()
-	else:
-		move_random()
+		chase_fireman(delta)
+	#else:
+		#move_random(delta)
