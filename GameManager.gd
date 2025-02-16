@@ -72,6 +72,8 @@ func _process(delta: float) -> void:
 		fires_left = -1
 		total_animals = -1
 		animals_saved = 0
+		GameManager.last_money_earned = 100 * (1+(float(timer.time_left) / 60))
+		GameManager.money += 100 * (1+(float(timer.time_left) / 60))
 		get_tree().change_scene_to_file("res://Menus/GameOver.tscn")
 
 func next_level():

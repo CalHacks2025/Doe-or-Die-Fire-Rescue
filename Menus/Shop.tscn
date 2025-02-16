@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://bkhd7ftsdq86s"]
 
 [ext_resource type="Script" path="res://Menus/shop.gd" id="1_nfaug"]
-[ext_resource type="Texture2D" uid="uid://dhjqeg3ttd3ad" path="res://assets/BackgroundImages/pixel-art-style-floral-garden-illustration.png" id="2_yly02"]
-[ext_resource type="FontFile" uid="uid://5jnny1cv8iie" path="res://assets/Fonts/mago3.ttf" id="3_4kg1h"]
-[ext_resource type="FontFile" uid="uid://chxd4yll533ra" path="res://assets/Fonts/mago1.ttf" id="4_r53g6"]
+[ext_resource type="Texture2D" uid="uid://bc8yladvqylg4" path="res://assets/BackgroundImages/pixel-art-style-floral-garden-illustration.png" id="2_yly02"]
+[ext_resource type="FontFile" uid="uid://vxgjg3p71pyn" path="res://assets/Fonts/mago3.ttf" id="3_4kg1h"]
+[ext_resource type="FontFile" uid="uid://dpksqjtkg6stf" path="res://assets/Fonts/mago1.ttf" id="4_r53g6"]
 [ext_resource type="Texture2D" uid="uid://cfyxpke5a1moi" path="res://assets/UI assets pack 2/UI assets pack 2/UI books & more.png" id="5_cs7dl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uryhl"]
@@ -151,10 +151,10 @@ text = "Total money:"
 
 [node name="MoneyField" type="RichTextLabel" parent="."]
 layout_mode = 2
-offset_left = 235.0
-offset_top = 369.0
-offset_right = 469.0
-offset_bottom = 433.0
+offset_left = 221.0
+offset_top = 611.0
+offset_right = 455.0
+offset_bottom = 675.0
 theme_override_colors/default_color = Color(0.501961, 0.709804, 0.301961, 1)
 theme_override_fonts/normal_font = ExtResource("3_4kg1h")
 theme_override_font_sizes/normal_font_size = 75
@@ -162,10 +162,10 @@ text = "00"
 
 [node name="MoneyEarnedField" type="RichTextLabel" parent="."]
 layout_mode = 2
-offset_left = 231.0
-offset_top = 620.0
-offset_right = 455.0
-offset_bottom = 688.0
+offset_left = 218.0
+offset_top = 378.0
+offset_right = 632.0
+offset_bottom = 429.0
 theme_override_colors/default_color = Color(0.27451, 0.490196, 0.282353, 1)
 theme_override_fonts/normal_font = ExtResource("3_4kg1h")
 theme_override_font_sizes/normal_font_size = 75

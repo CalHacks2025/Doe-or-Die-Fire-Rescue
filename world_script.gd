@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 		var seconds = time_left % 60
 		timer_label.text = "%02d:%02d" % [minutes, seconds]
 
+
 func _on_scene_exit():
 	#GameManager.next_level()
 	GameManager.timer_stop()
