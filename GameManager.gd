@@ -55,7 +55,9 @@ func timer_reset(seconds):
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if animalRescue_totalHP == 0 && player_totalHP == 0 && game_over != -1:
+		game_over = -1
+		get_tree().change_scene_to_file("res://Menus/GameOver.tscn")
 
 func next_level():
 	last_money_earned = int(timer.time_left)
@@ -101,5 +103,4 @@ func buy_pickupRange():
 func _on_timer_timeout():
 	print("timed out: game lost")
 	last_money_earned = 0
-	game_over = -1
-	get_tree().change_scene_to_file("res://Menus/GameOver.tscn")
+	
