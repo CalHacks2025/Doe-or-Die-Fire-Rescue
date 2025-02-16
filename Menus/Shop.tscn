@@ -1,7 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkhd7ftsdq86s"]
+[gd_scene load_steps=10 format=3 uid="uid://bkhd7ftsdq86s"]
 
 [ext_resource type="Script" path="res://Menus/shop.gd" id="1_nfaug"]
 [ext_resource type="Texture2D" uid="uid://dhjqeg3ttd3ad" path="res://assets/BackgroundImages/pixel-art-style-floral-garden-illustration.png" id="2_yly02"]
+[ext_resource type="FontFile" uid="uid://5jnny1cv8iie" path="res://assets/Fonts/mago3.ttf" id="3_4kg1h"]
+[ext_resource type="FontFile" uid="uid://chxd4yll533ra" path="res://assets/Fonts/mago1.ttf" id="4_r53g6"]
+[ext_resource type="Texture2D" uid="uid://cfyxpke5a1moi" path="res://assets/UI assets pack 2/UI assets pack 2/UI books & more.png" id="5_cs7dl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uryhl"]
+texture = ExtResource("5_cs7dl")
+region_rect = Rect2(352.985, 272.994, 30.1221, 14.3703)
 
 [sub_resource type="GDScript" id="GDScript_4fqv2"]
 script/source = "extends Button
@@ -26,6 +33,14 @@ func _on_item3_pressed() -> void:
 	pass
 "
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wpfa"]
+texture = ExtResource("5_cs7dl")
+region_rect = Rect2(287.943, 272.169, 31.8352, 15.7594)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6akpx"]
+texture = ExtResource("5_cs7dl")
+region_rect = Rect2(288.059, 272.1, 31.7272, 15.8173)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -41,89 +56,218 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -16.0
-offset_top = -213.0
-offset_right = 298.0
+offset_top = -129.0
+offset_right = 22.0
 offset_bottom = 597.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_yly02")
 expand_mode = 1
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -59.0
-offset_top = 236.0
-offset_right = 59.0
-offset_bottom = 273.0
-grow_horizontal = 2
-text = "Buy powerups?"
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(675, 82)
+scale = Vector2(96.2105, 7.85294)
+texture = ExtResource("5_cs7dl")
+region_enabled = true
+region_rect = Rect2(349.724, 254.271, 19.6302, 17.9545)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 412.0
+offset_top = 40.0
+offset_right = 1011.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.188235, 0.219608, 0.262745, 1)
+theme_override_fonts/normal_font = ExtResource("3_4kg1h")
+theme_override_font_sizes/normal_font_size = 100
+text = "Level Complete!"
+
+[node name="shopbook" type="Sprite2D" parent="."]
+position = Vector2(685, 551)
+scale = Vector2(12.9993, 14.4919)
+texture = ExtResource("5_cs7dl")
+region_enabled = true
+region_rect = Rect2(15.6587, 175.748, 96.0944, 50.8953)
+
+[node name="icon" type="Sprite2D" parent="."]
+position = Vector2(905, 546)
+scale = Vector2(13.7083, 14.0333)
+texture = ExtResource("5_cs7dl")
+region_enabled = true
+region_rect = Rect2(368.18, 433.254, 15.8382, 30.255)
+
+[node name="icon2" type="Sprite2D" parent="."]
+position = Vector2(1141, 547)
+scale = Vector2(13.7083, 14.0333)
+texture = ExtResource("5_cs7dl")
+region_enabled = true
+region_rect = Rect2(368.18, 433.254, 15.8382, 30.255)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(701, 315)
+scale = Vector2(9.77717, 6.52174)
+texture = ExtResource("5_cs7dl")
+region_enabled = true
+region_rect = Rect2(767.621, 63.344, 49.8373, 49.6196)
+
+[node name="label1" type="RichTextLabel" parent="."]
+offset_left = 123.0
+offset_top = 302.0
+offset_right = 406.0
+offset_bottom = 400.0
+theme_override_colors/default_color = Color(0.188235, 0.219608, 0.262745, 1)
+theme_override_fonts/normal_font = ExtResource("4_r53g6")
+theme_override_font_sizes/normal_font_size = 75
+text = "You earned:"
+
+[node name="label2" type="RichTextLabel" parent="."]
+offset_left = 119.0
+offset_top = 491.0
+offset_right = 557.0
+offset_bottom = 589.0
+theme_override_colors/default_color = Color(0.188235, 0.219608, 0.262745, 1)
+theme_override_fonts/normal_font = ExtResource("4_r53g6")
+theme_override_font_sizes/normal_font_size = 75
+text = "Total money:"
+
+[node name="MoneyField" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 178.0
+offset_top = 371.0
+offset_right = 461.0
+offset_bottom = 469.0
+theme_override_colors/default_color = Color(0.501961, 0.709804, 0.301961, 1)
+theme_override_fonts/normal_font = ExtResource("4_r53g6")
+theme_override_font_sizes/normal_font_size = 75
+text = "hihihi"
+
+[node name="MoneyEarnedField" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 171.0
+offset_top = 561.0
+offset_right = 548.0
+offset_bottom = 644.0
+theme_override_colors/default_color = Color(0.294118, 0.486275, 0.290196, 1)
+theme_override_fonts/normal_font = ExtResource("4_r53g6")
+theme_override_font_sizes/normal_font_size = 75
+text = "hellehelehelelo"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 219.0
+offset_right = 1297.0
+offset_bottom = 309.0
+theme_override_colors/default_color = Color(0.188235, 0.219608, 0.262745, 1)
+theme_override_fonts/normal_font = ExtResource("3_4kg1h")
+theme_override_font_sizes/normal_font_size = 90
+text = "Powerup Shop"
+
+[node name="ContinueButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -83.5
-offset_top = -20.0
-offset_right = 83.5
-offset_bottom = 20.0
+offset_left = -181.0
+offset_top = 378.0
+offset_right = 172.0
+offset_bottom = 486.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="buy_speed_button" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-text = "speed++"
-
-[node name="buy_hp_button" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-text = "hp++"
-
-[node name="buy_water_button" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-text = "water++"
-
-[node name="buy_pickup_button" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-text = "pickup++"
-
-[node name="ContinueButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 531.0
-offset_top = 513.0
-offset_right = 623.0
-offset_bottom = 544.0
-text = "Continue !!"
+theme_override_colors/font_color = Color(0.188235, 0.219608, 0.262745, 1)
+theme_override_fonts/font = ExtResource("3_4kg1h")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxTexture_uryhl")
+text = "Next Level"
 script = SubResource("GDScript_4fqv2")
 
-[node name="MoneyField" type="Label" parent="."]
-layout_mode = 0
-offset_left = 675.0
-offset_top = 220.0
-offset_right = 798.0
-offset_bottom = 284.0
+[node name="healthIcon" type="Sprite2D" parent="."]
+position = Vector2(905, 458)
+scale = Vector2(6.8125, 6.58333)
+texture = ExtResource("5_cs7dl")
+region_enabled = true
+region_rect = Rect2(655.531, 223.83, 16.9641, 15.6917)
 
-[node name="Title2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 508.0
-offset_top = 68.0
-offset_right = 658.0
-offset_bottom = 106.0
-text = "Level complete! "
+[node name="healthIcon2" type="Sprite2D" parent="."]
+position = Vector2(1139, 464)
+scale = Vector2(6.8125, 6.58333)
+texture = ExtResource("5_cs7dl")
+region_enabled = true
+region_rect = Rect2(737.781, 178.323, 12.3678, 11.6294)
 
-[node name="MoneyEarnedField" type="Label" parent="."]
-layout_mode = 0
-offset_left = 440.0
-offset_top = 122.0
-offset_right = 714.0
-offset_bottom = 212.0
+[node name="buy_speed_button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1090.0
+offset_top = 620.0
+offset_right = 1186.0
+offset_bottom = 681.0
+theme_override_fonts/font = ExtResource("4_r53g6")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_3wpfa")
+text = "Buy"
 
-[connection signal="pressed" from="HBoxContainer/buy_speed_button" to="." method="_on_buy_speed_pressed"]
-[connection signal="pressed" from="HBoxContainer/buy_hp_button" to="." method="_on_buy_hp_pressed"]
-[connection signal="pressed" from="HBoxContainer/buy_water_button" to="." method="_on_buy_water_pressed"]
-[connection signal="pressed" from="HBoxContainer/buy_pickup_button" to="." method="_on_buy_pickup_pressed"]
+[node name="buy_hp_button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 857.0
+offset_top = 622.0
+offset_right = 950.0
+offset_bottom = 682.0
+theme_override_fonts/font = ExtResource("4_r53g6")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_6akpx")
+text = "Buy"
+
+[node name="buy_water_button" type="Button" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 822.0
+offset_top = 655.0
+offset_right = 959.0
+offset_bottom = 717.0
+text = "water++"
+
+[node name="buy_pickup_button" type="Button" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 1051.0
+offset_top = 658.0
+offset_right = 1182.0
+offset_bottom = 718.0
+text = "pickup++"
+
+[node name="HealthLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 527.0
+offset_right = 947.0
+offset_bottom = 612.0
+theme_override_colors/font_color = Color(0.188235, 0.219608, 0.262745, 1)
+theme_override_fonts/font = ExtResource("3_4kg1h")
+theme_override_font_sizes/font_size = 50
+text = "HP++
+$20"
+horizontal_alignment = 1
+
+[node name="SpeedLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1071.0
+offset_top = 534.0
+offset_right = 1215.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0.188235, 0.219608, 0.262745, 1)
+theme_override_fonts/font = ExtResource("3_4kg1h")
+theme_override_font_sizes/font_size = 45
+text = "SPEED++
+$15"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="buy_speed_button" to="." method="_on_buy_speed_pressed"]
+[connection signal="pressed" from="buy_hp_button" to="." method="_on_buy_hp_pressed"]
+[connection signal="pressed" from="buy_water_button" to="." method="_on_buy_water_pressed"]
+[connection signal="pressed" from="buy_pickup_button" to="." method="_on_buy_pickup_pressed"]

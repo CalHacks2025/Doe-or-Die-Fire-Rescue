@@ -7,7 +7,7 @@ var money = 0 # ur broke
 var TIMEOUT = 30 # default timeout for now
 var timer = Timer.new() 
 
-# stats/powerups
+# stats defaults
 var PLAYER_SPEED
 var WATER_RADIUS
 var FIREMAN_TOTALHP
@@ -20,6 +20,7 @@ var HP_PRICE = 10
 var WATERRANGE_PRICE = 10
 var PICKUPRANGE_PRICE = 10
 
+# player stats
 var player_speed = 0
 var water_radius = 0
 var pickup_radius = 0
