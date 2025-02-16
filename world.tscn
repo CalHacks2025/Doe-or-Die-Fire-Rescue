@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=4 uid="uid://cids8xhoinaay"]
+[gd_scene load_steps=3 format=4 uid="uid://cspcdry0dqbo8"]
 
-[ext_resource type="TileSet" uid="uid://cdy636aqc2pxo" path="res://Tilesets.tres" id="1_c84qd"]
+[ext_resource type="TileSet" uid="uid://odj4ryxu7515" path="res://Tilesets.tres" id="1_c84qd"]
 [ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_em7iw"]
 
 [node name="World" type="Node2D"]
