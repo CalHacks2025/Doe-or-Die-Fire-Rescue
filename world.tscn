@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_em7iw"]
 [ext_resource type="PackedScene" uid="uid://d2khrcrwhwbyr" path="res://Animals/deer.tscn" id="3_cp728"]
 [ext_resource type="PackedScene" uid="uid://rn5vh73s3gij" path="res://Objects/water.tscn" id="3_x87bv"]
-[ext_resource type="PackedScene" uid="uid://bjk078xx4dhtc" path="res://Objects/deer_drop_off.tscn" id="4_464ew"]
+[ext_resource type="PackedScene" uid="uid://dx44yxsc0pq67" path="res://Objects/deer_drop_off.tscn" id="4_464ew"]
 [ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Players/animal_rescue.tscn" id="4_ox2bs"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1usv0"]

@@ -13,7 +13,7 @@ func _ready():
 func _process(delta):
 	var parent = get_parent()
 	if parent.deer_in_hand:
-		self.modulate.a8 = 100
+		self.modulate.a8 = 255
 	else:
 		self.modulate.a8 = 0
 	
