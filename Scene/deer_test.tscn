@@ -5,7 +5,7 @@
 
 [node name="DeerTest" type="Node2D"]
 
+[node name="fire_man" parent="." instance=ExtResource("2_c7gcj")]
+
 [node name="Deer" parent="." instance=ExtResource("1_5gobf")]
 script = null
-
-[node name="fire_man" parent="." instance=ExtResource("2_c7gcj")]
