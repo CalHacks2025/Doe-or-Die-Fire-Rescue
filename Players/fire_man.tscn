@@ -1,20 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://clt8fnfsw7qi1"]
+[gd_scene load_steps=8 format=3 uid="uid://clt8fnfsw7qi1"]
 
 [ext_resource type="Script" path="res://Players/fire_man.gd" id="1_oq64c"]
-[ext_resource type="Texture2D" uid="uid://d1ceb8w7iq8ka" path="res://assets/Pixel Adventure 1/Free/Main Characters/Ninja Frog/Jump (32x32).png" id="1_wiyru"]
+[ext_resource type="Texture2D" uid="uid://m4hd7otrpj05" path="res://assets/Pixel Adventure 1/Free/Main Characters/Ninja Frog/Jump (32x32).png" id="1_wiyru"]
+[ext_resource type="Texture2D" uid="uid://e6n2h6htcqak" path="res://assets/blue_circle.png" id="2_v2iap"]
+[ext_resource type="Script" path="res://Players/circle.gd" id="3_jxnao"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydddw"]
 height = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lytl3"]
-radius = 60.531
+radius = 47.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sha5p"]
+radius = 29.0
 
 [node name="fire_man" type="CharacterBody2D"]
 script = ExtResource("1_oq64c")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(215, 171)
-texture = ExtResource("1_wiyru")
+[node name="circle" type="Sprite2D" parent="."]
+position = Vector2(215.5, 172.5)
+scale = Vector2(0.197266, 0.197266)
+texture = ExtResource("2_v2iap")
+script = ExtResource("3_jxnao")
 
 [node name="fire_man_hitbox" type="Area2D" parent="."]
 
@@ -25,11 +32,21 @@ shape = SubResource("CapsuleShape2D_ydddw")
 [node name="damage_cooldown" type="Timer" parent="."]
 wait_time = 0.5
 
-[node name="put_out_fire" type="Area2D" parent="."]
+[node name="bucket_range" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="put_out_fire"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bucket_range"]
 position = Vector2(216, 173)
 shape = SubResource("CircleShape2D_lytl3")
+
+[node name="water_range" type="Area2D" parent="."]
+position = Vector2(216, 173)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_range"]
+shape = SubResource("CircleShape2D_sha5p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(215, 171)
+texture = ExtResource("1_wiyru")
 
 [connection signal="body_entered" from="fire_man_hitbox" to="." method="_on_fire_man_hitbox_body_entered"]
 [connection signal="body_exited" from="fire_man_hitbox" to="." method="_on_fire_man_hitbox_body_exited"]
