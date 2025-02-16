@@ -1,11 +1,11 @@
 [gd_scene load_steps=51 format=3 uid="uid://clt8fnfsw7qi1"]
 
 [ext_resource type="Script" path="res://Players/fire_man.gd" id="1_oq64c"]
-[ext_resource type="Texture2D" uid="uid://dpvnfa8wtj8y2" path="res://assets/blue_circle.png" id="2_v2iap"]
+[ext_resource type="Texture2D" uid="uid://bd7g4vst5p5ra" path="res://assets/blue_circle.png" id="2_v2iap"]
 [ext_resource type="Script" path="res://Players/circle.gd" id="3_jxnao"]
-[ext_resource type="Texture2D" uid="uid://nwiwj4svw56b" path="res://assets/custom assets/fireman_watering.png" id="4_bi1ow"]
-[ext_resource type="Texture2D" uid="uid://biko8wv4uuk7m" path="res://assets/custom assets/fireman_idle.png" id="5_jt5h5"]
-[ext_resource type="Texture2D" uid="uid://b4sulhqtkcmi7" path="res://assets/custom assets/fireman_walk.png" id="6_6p2or"]
+[ext_resource type="Texture2D" uid="uid://dstlrhamu67ui" path="res://assets/custom assets/fireman_watering.png" id="4_bi1ow"]
+[ext_resource type="Texture2D" uid="uid://cmgequnhpbl30" path="res://assets/custom assets/fireman_idle.png" id="5_jt5h5"]
+[ext_resource type="Texture2D" uid="uid://c5arql7q0c6bi" path="res://assets/custom assets/fireman_walk.png" id="6_6p2or"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydddw"]
 radius = 19.0
@@ -370,6 +370,9 @@ position = Vector2(216, 173)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_1dl2k")
 animation = &"watering"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(210, 159, 215, 157, 217, 161, 219, 159, 220, 159, 223, 159, 225, 163, 226, 172, 225, 180, 224, 187, 207, 187, 205, 179, 202, 159)
 
 [connection signal="body_entered" from="fire_man_hitbox" to="." method="_on_fire_man_hitbox_body_entered"]
 [connection signal="body_exited" from="fire_man_hitbox" to="." method="_on_fire_man_hitbox_body_exited"]
