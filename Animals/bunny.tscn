@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://c63olc2jt6tta"]
+
+[ext_resource type="Script" path="res://Animals/bunny.gd" id="1_vefjt"]
+[ext_resource type="Texture2D" uid="uid://cttqarptxtu2r" path="res://assets/MinifolksForestAnimals/Outline/MiniBunny.png" id="2_dfefb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31pad"]
+atlas = ExtResource("2_dfefb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yy2l"]
+atlas = ExtResource("2_dfefb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wp7f"]
+atlas = ExtResource("2_dfefb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81i48"]
+atlas = ExtResource("2_dfefb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_647pa"]
+atlas = ExtResource("2_dfefb")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrs53"]
+atlas = ExtResource("2_dfefb")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0d03"]
+atlas = ExtResource("2_dfefb")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf2py"]
+atlas = ExtResource("2_dfefb")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6i68"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31pad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yy2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wp7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81i48")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_647pa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrs53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0d03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf2py")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 5.0
+}]
+
+[node name="Bunny" type="CharacterBody2D"]
+script = ExtResource("1_vefjt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r6i68")
+animation = &"moving"
+
+[node name="MovementClock" type="Timer" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 5, -8, 12, -5, 16, 4, 16, 7, 12, 4, 5)

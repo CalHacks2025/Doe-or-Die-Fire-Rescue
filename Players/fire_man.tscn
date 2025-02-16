@@ -1,11 +1,13 @@
-[gd_scene load_steps=51 format=3 uid="uid://clt8fnfsw7qi1"]
+[gd_scene load_steps=53 format=3 uid="uid://clt8fnfsw7qi1"]
 
 [ext_resource type="Script" path="res://Players/fire_man.gd" id="1_oq64c"]
-[ext_resource type="Texture2D" uid="uid://bd7g4vst5p5ra" path="res://assets/blue_circle.png" id="2_v2iap"]
+[ext_resource type="Texture2D" uid="uid://d1orqnsxixc4r" path="res://assets/custom assets/blue_circle.png" id="2_v2iap"]
 [ext_resource type="Script" path="res://Players/circle.gd" id="3_jxnao"]
-[ext_resource type="Texture2D" uid="uid://dstlrhamu67ui" path="res://assets/custom assets/fireman_watering.png" id="4_bi1ow"]
-[ext_resource type="Texture2D" uid="uid://cmgequnhpbl30" path="res://assets/custom assets/fireman_idle.png" id="5_jt5h5"]
-[ext_resource type="Texture2D" uid="uid://c5arql7q0c6bi" path="res://assets/custom assets/fireman_walk.png" id="6_6p2or"]
+[ext_resource type="Texture2D" uid="uid://cjt5eoa2vfc8c" path="res://assets/custom assets/fireman_watering.png" id="4_bi1ow"]
+[ext_resource type="Texture2D" uid="uid://dhye73t6fb8bh" path="res://assets/custom assets/fireman_idle.png" id="5_jt5h5"]
+[ext_resource type="Texture2D" uid="uid://dmg04kjplxxjc" path="res://assets/custom assets/fireman_walk.png" id="6_6p2or"]
+[ext_resource type="Texture2D" uid="uid://dgnnob0pf2dfc" path="res://assets/custom assets/red_hp.png" id="7_vm74o"]
+[ext_resource type="Texture2D" uid="uid://s4juamxlyd4f" path="res://assets/custom assets/green_hp.png" id="8_whqes"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydddw"]
 radius = 19.0
@@ -339,7 +341,7 @@ animations = [{
 script = ExtResource("1_oq64c")
 
 [node name="circle" type="Sprite2D" parent="."]
-position = Vector2(216, 173)
+position = Vector2(0, -6.10352e-05)
 scale = Vector2(0.28125, 0.285156)
 texture = ExtResource("2_v2iap")
 script = ExtResource("3_jxnao")
@@ -347,7 +349,7 @@ script = ExtResource("3_jxnao")
 [node name="fire_man_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fire_man_hitbox"]
-position = Vector2(216, 173)
+position = Vector2(0, -6.10352e-05)
 shape = SubResource("CapsuleShape2D_ydddw")
 
 [node name="damage_cooldown" type="Timer" parent="."]
@@ -356,23 +358,34 @@ wait_time = 0.5
 [node name="bucket_range" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bucket_range"]
-position = Vector2(216, 173)
+position = Vector2(0, -6.10352e-05)
 shape = SubResource("CircleShape2D_lytl3")
 
 [node name="water_range" type="Area2D" parent="."]
-position = Vector2(216, 173)
+position = Vector2(0, -6.10352e-05)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="water_range"]
 shape = SubResource("CircleShape2D_sha5p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(216, 173)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_1dl2k")
 animation = &"watering"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-216, -173)
 polygon = PackedVector2Array(210, 159, 215, 157, 217, 161, 219, 159, 220, 159, 223, 159, 225, 163, 226, 172, 225, 180, 224, 187, 207, 187, 205, 179, 202, 159)
+
+[node name="RedHp" type="Sprite2D" parent="."]
+position = Vector2(0, 27)
+scale = Vector2(0.5, 1)
+texture = ExtResource("7_vm74o")
+
+[node name="GreenHp" type="Sprite2D" parent="."]
+position = Vector2(-32, 23)
+scale = Vector2(0.5, 1)
+texture = ExtResource("8_whqes")
+centered = false
 
 [connection signal="body_entered" from="fire_man_hitbox" to="." method="_on_fire_man_hitbox_body_entered"]
 [connection signal="body_exited" from="fire_man_hitbox" to="." method="_on_fire_man_hitbox_body_exited"]

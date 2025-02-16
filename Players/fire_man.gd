@@ -17,7 +17,12 @@ var player_alive = true
 var fire_in_range = false
 var fire_damage_cooldown = true
 
+var hpBar = ""
+var hScale = -1
 func _ready():
+	hpBar = $"GreenHp"
+	hScale = hpBar.scale.x
+	
 	anime = $"AnimatedSprite2D"
 	aScale = anime.scale.x
 	anime.play("idle_forwards")
@@ -115,6 +120,10 @@ func _process(delta: float) -> void:
 		move()
 		if(velocity.x == 0 and velocity.y == 0):
 			anime.play("idle_forwards")
+	
+	var pHealth = float(health) / float(GameManager.player_totalHP)
+	hpBar.scale.x = hScale * pHealth
+	
 	
 	if water_next_to > 0 and Input.is_action_just_pressed("refill_water"):
 		water_level = 10
