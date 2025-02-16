@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 const MIN_TIME = 7
 const MAX_TIME = 10
-const SPAWN_RADIUS = 100  # Distance to spawn new fire
+const SPAWN_RADIUS = 125  # Distance to spawn new fire
 const MIN_SPACING = 50    # Minimum spacing to prevent overlap
 const GROUP_NAME = "fire_spread"  # Group for tracking fires
 
@@ -37,23 +37,40 @@ func is_duplicate_too_close() -> bool:
 
 func spawn_fire():
 	var new_fire = duplicate()
-	
+
+	# Get all TileMapLayers in the scene
+	var tilemap_layers = get_tree().get_nodes_in_group("flammable")
+
+	if tilemap_layers.is_empty():
+		print("❌ No TileMapLayer found in 'flammable' group!")
+		return
+
 	# Try up to 10 times to find a valid position
 	var tries = 10
 	while tries > 0:
 		var offset = Vector2(randf_range(-SPAWN_RADIUS, SPAWN_RADIUS), randf_range(-SPAWN_RADIUS, SPAWN_RADIUS))
-		var new_position = self.position + offset
-		
-		var too_close = false
-		for node in get_tree().get_nodes_in_group(GROUP_NAME):
-			if node.position.distance_to(new_position) < MIN_SPACING:
-				too_close = true
-				break
+		var new_position = Vector2(49,-248)
+		var valid_position = false
 
-		if not too_close:  # If a valid spot is found, break loop
-			new_fire.position = new_position
-			break
+		# Check each TileMapLayer for a flammable tile at this position
+		for layer in tilemap_layers:
+			var tile_coords = layer.local_to_map(new_position)
+			var tile_source = layer.get_cell_source_id(tile_coords)
+
+			# Debugging output
+			print("🔎 Checking Tile:", tile_coords, " in Layer:", layer.name, "| Source ID:", tile_source)
+
+			if tile_source != -1:  # Found a flammable tile
+				# Snap the fire to the tile grid
+				new_fire.position = layer.map_to_local(tile_coords)  # Use map_to_local to ensure proper alignment
+				valid_position = true
+				break  # Stop checking once we find a valid tile
+
+		if valid_position:
+			get_parent().add_child(new_fire)  # Add new fire to scene
+			print("🔥 Fire spawned at:", new_fire.position)
+			return  # Stop after successful placement
 
 		tries -= 1
 
-	get_parent().add_child(new_fire)  # Add the new fire to the scene
+	print("⚠️ No valid fire position found.")
