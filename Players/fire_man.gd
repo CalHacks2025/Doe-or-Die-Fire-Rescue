@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
-
+var anime =""
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-const FIRE_DIS = 70
 
 var water_level = 10
 var fire_objects = [] 
@@ -16,6 +15,10 @@ var fire_in_range = false
 var fire_damage_cooldown = true
 
 func _ready():
+	anime = $"AnimatedSprite2D"
+	
+	anime.play("idle_forwards")
+	
 	add_to_group("fire_man")
 	var fmhb = $"fire_man_hitbox"
 	fmhb.area_entered.connect(_on_body_entered)  
@@ -88,12 +91,13 @@ func _on_fire_man_hitbox_body_entered(body: Node2D) -> void:
 func _process(delta: float) -> void:
 	move()
 	
+	print(velocity)
+	
 	if water_next_to > 0 and Input.is_action_just_pressed("refill_water"):
 		water_level = 10
 	elif Input.is_action_just_pressed("refill_water") and water_level > 0:
 		var fire_died = false
 		for fire in fire_objects:
-			print(fire.position)
 			fire.queue_free()
 			fire_died = true
 		fire_objects.clear() 

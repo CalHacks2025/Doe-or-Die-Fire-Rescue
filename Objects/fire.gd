@@ -14,9 +14,6 @@ func _ready() -> void:
 	add_to_group(GROUP_NAME)  # Track this instance as fire
 	start_spawn_timer()  # Begin the spreading cycle
 	add_to_group("fire")
-	print("hello world???")
-	
-	
 
 func _process(delta: float) -> void:
 	if sprite.animation != "active":
