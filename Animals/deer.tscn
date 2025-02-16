@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2khrcrwhwbyr"]
+[gd_scene load_steps=15 format=3 uid="uid://d2khrcrwhwbyr"]
 
 [ext_resource type="Script" path="res://Animals/deer.gd" id="1_tl86y"]
 [ext_resource type="Texture2D" uid="uid://bchjxxbnfg8tg" path="res://assets/MinifolksForestAnimals/Outline/MiniDeer1.png" id="3_vb6it"]
@@ -78,8 +78,10 @@ radius = 164.11
 [sub_resource type="CircleShape2D" id="CircleShape2D_hwtco"]
 radius = 434.166
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mqmgq"]
+radius = 21.0
+
 [node name="Deer" type="CharacterBody2D"]
-position = Vector2(-25, -2)
 script = ExtResource("1_tl86y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -89,13 +91,16 @@ sprite_frames = SubResource("SpriteFrames_4qj0o")
 animation = &"idle"
 
 [node name="deer_agro" type="Area2D" parent="."]
-position = Vector2(-49, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deer_agro"]
-position = Vector2(49, -1)
 shape = SubResource("CircleShape2D_gtup7")
 
 [node name="deer_deagro" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deer_deagro"]
 shape = SubResource("CircleShape2D_hwtco")
+
+[node name="deer_hb" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deer_hb"]
+shape = SubResource("CircleShape2D_mqmgq")
