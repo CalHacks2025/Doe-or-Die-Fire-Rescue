@@ -73,10 +73,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gtup7"]
-radius = 164.11
+radius = 144.031
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hwtco"]
-radius = 434.166
+radius = 254.049
 
 [node name="Deer" type="CharacterBody2D"]
 position = Vector2(-25, -2)
@@ -105,3 +105,4 @@ shape = SubResource("CircleShape2D_hwtco")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_max_distance = 95.0
 path_postprocessing = 1
+debug_enabled = true
