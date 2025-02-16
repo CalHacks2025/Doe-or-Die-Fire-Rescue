@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cp42glql32kcy"]
+[gd_scene load_steps=13 format=4 uid="uid://cp42glql32kcy"]
 
 [ext_resource type="TileSet" uid="uid://cr7i00fmc25dn" path="res://Tilesets.tres" id="1_c84qd"]
 [ext_resource type="Script" path="res://world_script.gd" id="1_ktcrw"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Players/animal_rescue.tscn" id="4_ox2bs"]
 [ext_resource type="PackedScene" path="res://Animals/bunny.tscn" id="5_v1iat"]
 [ext_resource type="PackedScene" uid="uid://ccokp3p7kp7nn" path="res://Objects/immovableFire.tscn" id="7_f0t1t"]
-[ext_resource type="PackedScene" uid="uid://d3hmnxo8uu4nh" path="res://Objects/fire.tscn" id="7_tww5s"]
 [ext_resource type="FontFile" uid="uid://dwglyknclej32" path="res://assets/Fonts/mago3.ttf" id="9_5u0kg"]
 [ext_resource type="Texture2D" uid="uid://cfyxpke5a1moi" path="res://assets/UI assets pack 2/UI assets pack 2/UI books & more.png" id="11_ofn1c"]
 
@@ -89,9 +88,6 @@ scale = Vector2(3, 3)
 position = Vector2(206, 1351)
 rotation = 1.5708
 scale = Vector2(1, 3)
-
-[node name="Fire" parent="." instance=ExtResource("7_tww5s")]
-position = Vector2(539, 571)
 
 [node name="TimerLabel" type="Label" parent="."]
 offset_left = -232.0
