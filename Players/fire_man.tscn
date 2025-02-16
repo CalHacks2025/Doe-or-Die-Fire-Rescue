@@ -1,9 +1,10 @@
-[gd_scene load_steps=44 format=3 uid="uid://clt8fnfsw7qi1"]
+[gd_scene load_steps=49 format=3 uid="uid://clt8fnfsw7qi1"]
 
 [ext_resource type="Script" path="res://Players/fire_man.gd" id="1_oq64c"]
 [ext_resource type="Texture2D" uid="uid://g7jmvupnvdpw" path="res://assets/Pixel Adventure 1/Free/Main Characters/Ninja Frog/Jump (32x32).png" id="1_wiyru"]
 [ext_resource type="Texture2D" uid="uid://bq178je5d61nr" path="res://assets/custom assets/walk.png" id="2_lc41s"]
 [ext_resource type="Texture2D" uid="uid://whmq8v1sn2sh" path="res://assets/custom assets/idle.png" id="2_niibo"]
+[ext_resource type="Texture2D" uid="uid://d1u8ldq53gvqk" path="res://assets/custom assets/fireman_watering.png" id="4_bi1ow"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_awj6i"]
 atlas = ExtResource("2_niibo")
@@ -149,6 +150,22 @@ region = Rect2(320, 160, 80, 80)
 atlas = ExtResource("2_lc41s")
 region = Rect2(0, 240, 80, 80)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy3y1"]
+atlas = ExtResource("4_bi1ow")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r34w"]
+atlas = ExtResource("4_bi1ow")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbjt2"]
+atlas = ExtResource("4_bi1ow")
+region = Rect2(0, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrwrb"]
+atlas = ExtResource("4_bi1ow")
+region = Rect2(80, 80, 80, 80)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_pg3jk"]
 animations = [{
 "frames": [{
@@ -229,7 +246,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_behind",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -258,7 +275,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_sideways",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -287,6 +304,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_straight",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy3y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r34w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbjt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrwrb")
+}],
+"loop": true,
+"name": &"watering",
 "speed": 5.0
 }]
 
@@ -305,7 +339,8 @@ script = ExtResource("1_oq64c")
 position = Vector2(84, 140)
 scale = Vector2(8.8, 8.6375)
 sprite_frames = SubResource("SpriteFrames_pg3jk")
-animation = &"idle_backwards"
+animation = &"watering"
+frame_progress = 0.0882775
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
