@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="3_ytu08"]
 [ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Players/animal_rescue.tscn" id="4_i8ht1"]
 [ext_resource type="Script" path="res://Objects/immovableFire.gd" id="4_tssi3"]
-[ext_resource type="PackedScene" uid="uid://dyvnsjxxfewmb" path="res://Objects/water.tscn" id="7_d8edi"]
+[ext_resource type="PackedScene" uid="uid://rn5vh73s3gij" path="res://Objects/water.tscn" id="7_d8edi"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="8_w0ltg"]
 [ext_resource type="Script" path="res://area_2d.gd" id="9_qykbl"]
 

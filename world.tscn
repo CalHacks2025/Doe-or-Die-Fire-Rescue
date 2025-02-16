@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://cr7i00fmc25dn" path="res://Tilesets.tres" id="1_c84qd"]
 [ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_em7iw"]
-[ext_resource type="PackedScene" uid="uid://dyvnsjxxfewmb" path="res://Objects/water.tscn" id="3_x87bv"]
+[ext_resource type="PackedScene" uid="uid://rn5vh73s3gij" path="res://Objects/water.tscn" id="3_x87bv"]
 [ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Players/animal_rescue.tscn" id="4_ox2bs"]
 
 [node name="World" type="Node2D"]
@@ -110,6 +110,11 @@ position = Vector2(-205.723, -31.3771)
 
 [node name="Water6" parent="PickableWater" instance=ExtResource("3_x87bv")]
 position = Vector2(-630.488, -15.5123)
+
+[node name="Water9" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-784.41, 23.9735)
+rotation = -0.261799
+scale = Vector2(1, 1.81087)
 
 [node name="Water11" parent="PickableWater" instance=ExtResource("3_x87bv")]
 position = Vector2(-976.813, 32.9635)
