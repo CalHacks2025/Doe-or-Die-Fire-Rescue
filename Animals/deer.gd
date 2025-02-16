@@ -54,6 +54,7 @@ func chase_fireman() -> void:
 		# Calculate direction to the player and move
 		nav_agent.target_position = fireman.global_position
 		velocity = global_position.direction_to(nav_agent.get_next_path_position()) * SPEED
+		rotation = velocity.angle()
 		
 		move_and_slide()
 		$AnimatedSprite2D.play("walking")
