@@ -1,11 +1,17 @@
-[gd_scene load_steps=8 format=4 uid="uid://ceuucg1ij8bgp"]
+[gd_scene load_steps=14 format=4 uid="uid://cp42glql32kcy"]
 
-[ext_resource type="TileSet" uid="uid://bcbcfct43egxt" path="res://Tilesets.tres" id="1_c84qd"]
+[ext_resource type="TileSet" uid="uid://cr7i00fmc25dn" path="res://Tilesets.tres" id="1_c84qd"]
+[ext_resource type="Script" path="res://world_script.gd" id="1_ktcrw"]
 [ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_em7iw"]
 [ext_resource type="PackedScene" uid="uid://d2khrcrwhwbyr" path="res://Animals/deer.tscn" id="3_cp728"]
-[ext_resource type="PackedScene" uid="uid://dyvnsjxxfewmb" path="res://Objects/water.tscn" id="3_x87bv"]
+[ext_resource type="PackedScene" uid="uid://rn5vh73s3gij" path="res://Objects/water.tscn" id="3_x87bv"]
+[ext_resource type="PackedScene" path="res://Objects/deer_drop_off.tscn" id="4_464ew"]
 [ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Players/animal_rescue.tscn" id="4_ox2bs"]
-[ext_resource type="PackedScene" uid="uid://c63olc2jt6tta" path="res://Animals/bunny.tscn" id="5_v1iat"]
+[ext_resource type="PackedScene" path="res://Animals/bunny.tscn" id="5_v1iat"]
+[ext_resource type="PackedScene" uid="uid://ccokp3p7kp7nn" path="res://Objects/immovableFire.tscn" id="7_f0t1t"]
+[ext_resource type="PackedScene" uid="uid://d3hmnxo8uu4nh" path="res://Objects/fire.tscn" id="7_tww5s"]
+[ext_resource type="FontFile" uid="uid://dwglyknclej32" path="res://assets/Fonts/mago3.ttf" id="9_5u0kg"]
+[ext_resource type="Texture2D" uid="uid://cfyxpke5a1moi" path="res://assets/UI assets pack 2/UI assets pack 2/UI books & more.png" id="11_ofn1c"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1usv0"]
 vertices = PackedVector2Array(13.1328, 447.977, 517.758, 447.008, 514.219, 601.062, 364.539, 602.062, 16.8594, 731.781, 111.07, 729.781, 910.219, 935, 909.219, 889, 1002.15, 889, 1003.91, 1007.47, 977.141, 1024.01, 887, 935, 751.961, 1024.98, 830, 937, 740, 1013.68, 740, 890.883, 803, 890.117, 803, 937, -35.5703, 1022.92, -39.5781, 1049, -191.898, 1049, -190.094, 863.938, -40, 1002, -40, 863.047, 97, 1002, 97.2422, 1024.09, 887, 810.156, 830, 811.031, 518.961, 809.969, 391.922, 809, 392.922, 682.117, 550.93, 684.133, 1079, 807.148, 285.812, 1130, 236, 905, 236, 809, 377.719, 1097.62, 292.719, 1157.67, 406.391, 1181, 458, 1181, 458, 1255.07, 395.367, 1243.07, 83.7891, 1257.91, 259.523, 1241.92, 92.9766, 1201.93, 253.438, 1130, 212.812, 905, 97, 905, 109.938, 905, 551.922, 544.031, 1075.36, 545.961, 1079, 570.703, 357.539, 727.062, 216.188, 728.07, 373.656, 1154.37, 519.961, 1097.33, 487.469, 1101.97)
@@ -214,3 +220,46 @@ polygon = PackedVector2Array(979, -386, 976, -404, 423, -400, 420, -496, -120, -
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_1usv0")
+
+[node name="Fire2" parent="." instance=ExtResource("7_f0t1t")]
+position = Vector2(100, 1118)
+
+[node name="Fire4" parent="." instance=ExtResource("7_f0t1t")]
+position = Vector2(139, 1119)
+
+[node name="Fire5" parent="." instance=ExtResource("7_f0t1t")]
+position = Vector2(170, 1118)
+
+[node name="Fire6" parent="." instance=ExtResource("7_f0t1t")]
+position = Vector2(133, 901)
+
+[node name="Fire8" parent="." instance=ExtResource("7_f0t1t")]
+position = Vector2(467, 714)
+
+[node name="Fire9" parent="." instance=ExtResource("7_f0t1t")]
+position = Vector2(531, 713)
+
+[node name="Fire10" parent="." instance=ExtResource("7_f0t1t")]
+position = Vector2(546, 765)
+
+[node name="Fire11" parent="." instance=ExtResource("7_f0t1t")]
+position = Vector2(589, 794)
+
+[node name="Fire12" parent="." instance=ExtResource("7_f0t1t")]
+position = Vector2(418, 681)
+
+[node name="Fire7" parent="." instance=ExtResource("7_f0t1t")]
+position = Vector2(195, 897)
+
+[node name="Fire3" parent="." instance=ExtResource("7_f0t1t")]
+position = Vector2(204, 1119)
+
+[node name="Fire13" parent="." instance=ExtResource("7_f0t1t")]
+position = Vector2(245, 1119)
+
+[node name="moneysymbol" type="Sprite2D" parent="."]
+position = Vector2(822, 421)
+scale = Vector2(3.9375, 3.68333)
+texture = ExtResource("11_ofn1c")
+region_enabled = true
+region_rect = Rect2(671.073, 175.836, 16.975, 15.5233)

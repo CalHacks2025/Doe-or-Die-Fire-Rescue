@@ -130,7 +130,7 @@ tile_map_data = PackedByteArray("AAAyAP//CwAAAAEAAAAyAAAACwAAAAIAAAAyAAEACwAAAAM
 tile_set = ExtResource("1_7scj3")
 
 [node name="fire_man" parent="." groups=["players"] instance=ExtResource("3_ytu08")]
-position = Vector2(-135, -44)
+position = Vector2(79, 136)
 
 [node name="animal_rescue" parent="." groups=["players"] instance=ExtResource("4_i8ht1")]
 position = Vector2(81, 18)
@@ -165,6 +165,12 @@ polygon = PackedVector2Array(977, 54, 976, 111, 1823, 106, 1823, 57)
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(1874, 303, 1874, 155, 1985, 161, 1982, 115, 1982, 110, 1984, 0, 1971, 1, 1997, -62, 2108, 236, 2070, 330)
 
+[node name="Fire" parent="StaticBody2D" instance=ExtResource("3_p7cog")]
+position = Vector2(833, -10)
+
+[node name="Fire2" parent="StaticBody2D" instance=ExtResource("3_p7cog")]
+position = Vector2(834, 30)
+
 [node name="Water" parent="." instance=ExtResource("7_d8edi")]
 position = Vector2(960, 197)
 scale = Vector2(63.8, 1)
@@ -174,8 +180,7 @@ position = Vector2(1882, 331)
 scale = Vector2(5.32001, -7.56)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(251, 77)
-offset = Vector2(0, -100)
+position = Vector2(14, -91)
 anchor_mode = 0
 ignore_rotation = false
 zoom = Vector2(3, 3)
