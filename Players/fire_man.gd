@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
 var anime =""
+var aScale = -1
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+var watering = false
+var lastLeft = false
 
 var water_level = 10
 var fire_objects = [] 
@@ -16,7 +19,7 @@ var fire_damage_cooldown = true
 
 func _ready():
 	anime = $"AnimatedSprite2D"
-	
+	aScale = anime.scale.x
 	anime.play("idle_forwards")
 	
 	add_to_group("fire_man")
@@ -68,17 +71,34 @@ func _on_damage_cooldown_timeout() -> void:
 func move() -> void:
 	var direction = Vector2.ZERO
 	
-	if Input.is_action_pressed("move_left_a"):
-		direction.x = -1
-	elif  Input.is_action_pressed("move_right_d"):
-		direction.x = 1
-	
 	if Input.is_action_pressed("move_down_s"):
+		anime.play("walk_forward")
 		direction.y = 1
 	elif  Input.is_action_pressed("move_up_w"):
+		anime.play("walk_backwards")
 		direction.y = -1
 	
+	if Input.is_action_pressed("move_left_a"):
+		if direction.y == 0:
+			anime.play("walk_sideways")
+			if anime.scale.x > 0:
+				anime.scale.x = -aScale
+		lastLeft = true
+		direction.x = -1
+	elif  Input.is_action_pressed("move_right_d"):
+		if direction.y == 0:
+			anime.play("walk_sideways")
+			if anime.scale.x < 0:
+				anime.scale.x = aScale
+		lastLeft = false
+		direction.x = 1		
+	
 	if direction.x != 0 and direction.y != 0:
+		if direction.y == -1:
+			anime.play("walk_backwards")
+		else:
+			anime.play("walk_forward")
+			
 		direction = direction.normalized()
 	
 	velocity = direction * SPEED
@@ -89,9 +109,10 @@ func _on_fire_man_hitbox_body_entered(body: Node2D) -> void:
 		fire_in_range = true
 
 func _process(delta: float) -> void:
-	move()
-	
-	print(velocity)
+	if not watering:
+		move()
+		if(velocity.x == 0 and velocity.y == 0):
+			anime.play("idle_forwards")
 	
 	if water_next_to > 0 and Input.is_action_just_pressed("refill_water"):
 		water_level = 10
@@ -101,7 +122,16 @@ func _process(delta: float) -> void:
 			fire.queue_free()
 			fire_died = true
 		fire_objects.clear() 
+		
 		if fire_died:
+			watering = true
+			anime.play("watering")
+			if not lastLeft:
+				anime.scale.x = -aScale
+			else:
+				anime.scale.x = aScale	
+			await anime.animation_finished
+			watering = false
 			water_level = 0			
 	
 	fire_damage()
