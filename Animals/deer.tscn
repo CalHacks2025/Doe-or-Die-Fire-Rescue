@@ -99,3 +99,7 @@ shape = SubResource("CircleShape2D_gtup7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deer_deagro"]
 shape = SubResource("CircleShape2D_hwtco")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+debug_enabled = true
