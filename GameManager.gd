@@ -30,6 +30,10 @@ func timer_reset(seconds):
 func _process(delta: float) -> void:
 	pass
 	
+func calculate_money():
+	var amount = timer.time_left # money you get equals time left for now
+	add_money(amount)
+	
 func add_money(amount):
 	money += amount
 	print("Money: ", money)

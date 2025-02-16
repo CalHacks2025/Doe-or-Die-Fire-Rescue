@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dny8a6p8mnmnn"]
-
-[ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_brmvr"]
-
-[node name="BucketDev" type="Node2D"]
-
-[node name="fire_man" parent="." instance=ExtResource("2_brmvr")]
