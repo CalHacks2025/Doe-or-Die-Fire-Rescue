@@ -1,21 +1,21 @@
-[gd_scene load_steps=52 format=3 uid="uid://clt8fnfsw7qi1"]
+[gd_scene load_steps=51 format=3 uid="uid://clt8fnfsw7qi1"]
 
 [ext_resource type="Script" path="res://Players/fire_man.gd" id="1_oq64c"]
-[ext_resource type="Texture2D" uid="uid://g7jmvupnvdpw" path="res://assets/Pixel Adventure 1/Free/Main Characters/Ninja Frog/Jump (32x32).png" id="1_wiyru"]
-[ext_resource type="Texture2D" uid="uid://bd7g4vst5p5ra" path="res://assets/blue_circle.png" id="2_v2iap"]
+[ext_resource type="Texture2D" uid="uid://e6n2h6htcqak" path="res://assets/blue_circle.png" id="2_v2iap"]
 [ext_resource type="Script" path="res://Players/circle.gd" id="3_jxnao"]
-[ext_resource type="Texture2D" uid="uid://dstlrhamu67ui" path="res://assets/custom assets/fireman_watering.png" id="4_bi1ow"]
-[ext_resource type="Texture2D" uid="uid://cmgequnhpbl30" path="res://assets/custom assets/fireman_idle.png" id="5_jt5h5"]
-[ext_resource type="Texture2D" uid="uid://c5arql7q0c6bi" path="res://assets/custom assets/fireman_walk.png" id="6_6p2or"]
+[ext_resource type="Texture2D" uid="uid://c4dyxjdyf0kx" path="res://assets/custom assets/fireman_watering.png" id="4_bi1ow"]
+[ext_resource type="Texture2D" uid="uid://cgqjuog3fworh" path="res://assets/custom assets/fireman_idle.png" id="5_jt5h5"]
+[ext_resource type="Texture2D" uid="uid://chdls7iy0xuh0" path="res://assets/custom assets/fireman_walk.png" id="6_6p2or"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydddw"]
-height = 32.0
+radius = 19.0
+height = 52.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lytl3"]
-radius = 47.0
+radius = 68.0294
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sha5p"]
-radius = 29.0
+radius = 42.0119
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmylw"]
 atlas = ExtResource("5_jt5h5")
@@ -330,7 +330,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hj3kk")
 }],
-"loop": true,
+"loop": false,
 "name": &"watering",
 "speed": 5.0
 }]
@@ -339,8 +339,8 @@ animations = [{
 script = ExtResource("1_oq64c")
 
 [node name="circle" type="Sprite2D" parent="."]
-position = Vector2(215.5, 172.5)
-scale = Vector2(0.197266, 0.197266)
+position = Vector2(216, 173)
+scale = Vector2(0.28125, 0.285156)
 texture = ExtResource("2_v2iap")
 script = ExtResource("3_jxnao")
 
@@ -365,14 +365,11 @@ position = Vector2(216, 173)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="water_range"]
 shape = SubResource("CircleShape2D_sha5p")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(215, 171)
-texture = ExtResource("1_wiyru")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(216, 173)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_1dl2k")
-animation = &"idle_backwards"
+animation = &"watering"
 
 [connection signal="body_entered" from="fire_man_hitbox" to="." method="_on_fire_man_hitbox_body_entered"]
 [connection signal="body_exited" from="fire_man_hitbox" to="." method="_on_fire_man_hitbox_body_exited"]
