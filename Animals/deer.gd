@@ -52,10 +52,6 @@ func chase_fireman() -> void:
 		
 		move_and_slide()
 
-func _on_DetectRadius_body_entered(body):
-	# Damage if a fireman
-	if body == fireman:
-		fireman.health -= 10
 
 func _physics_process(_delta):
 	# Check if fireman in range -- chase or move "randomly"
