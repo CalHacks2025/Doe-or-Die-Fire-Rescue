@@ -1,8 +1,8 @@
-[gd_scene load_steps=45 format=3 uid="uid://d3hmnxo8uu4nh"]
+[gd_scene load_steps=45 format=3 uid="uid://vfloha6x3wmi"]
 
 [ext_resource type="Script" path="res://Objects/fire.gd" id="1_2uvbr"]
-[ext_resource type="Texture2D" uid="uid://cn1do1waqtraj" path="res://assets/Particle FX 1.2 Free/Spritesheets/Fire+Sparks-Sheet.png" id="1_a8ahh"]
-[ext_resource type="Texture2D" uid="uid://cqcmahsosjo5b" path="res://assets/Particle FX 1.2 Free/Spritesheets/Smoke-Sheet.png" id="3_mcfug"]
+[ext_resource type="Texture2D" uid="uid://dhaxk17xj4uom" path="res://assets/Particle FX 1.2 Free/Spritesheets/Fire+Sparks-Sheet.png" id="1_a8ahh"]
+[ext_resource type="Texture2D" uid="uid://b3nvaeqbm47dx" path="res://assets/Particle FX 1.2 Free/Spritesheets/Smoke-Sheet.png" id="3_mcfug"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4p8mi"]
 atlas = ExtResource("1_a8ahh")

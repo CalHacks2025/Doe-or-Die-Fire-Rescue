@@ -1,0 +1,101 @@
+[gd_scene load_steps=14 format=3 uid="uid://d2khrcrwhwbyr"]
+
+[ext_resource type="Script" path="res://Animals/deer.gd" id="1_tl86y"]
+[ext_resource type="Texture2D" uid="uid://btu3pbth4vxs4" path="res://assets/MinifolksForestAnimals/Outline/MiniDeer1.png" id="3_vb6it"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np8e0"]
+atlas = ExtResource("3_vb6it")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f33ck"]
+atlas = ExtResource("3_vb6it")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyj5g"]
+atlas = ExtResource("3_vb6it")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmknl"]
+atlas = ExtResource("3_vb6it")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwhj1"]
+atlas = ExtResource("3_vb6it")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47bw7"]
+atlas = ExtResource("3_vb6it")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll2c8"]
+atlas = ExtResource("3_vb6it")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvf1s"]
+atlas = ExtResource("3_vb6it")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qj0o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np8e0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f33ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyj5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmknl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwhj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47bw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll2c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvf1s")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gtup7"]
+radius = 164.11
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hwtco"]
+radius = 434.166
+
+[node name="Deer" type="CharacterBody2D"]
+position = Vector2(-25, -2)
+script = ExtResource("1_tl86y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -18)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4qj0o")
+animation = &"idle"
+
+[node name="deer_agro" type="Area2D" parent="."]
+position = Vector2(-49, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deer_agro"]
+position = Vector2(49, -1)
+shape = SubResource("CircleShape2D_gtup7")
+
+[node name="deer_deagro" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deer_deagro"]
+shape = SubResource("CircleShape2D_hwtco")
