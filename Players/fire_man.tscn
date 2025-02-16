@@ -3,18 +3,17 @@
 [ext_resource type="Script" path="res://Players/fire_man.gd" id="1_oq64c"]
 [ext_resource type="Texture2D" uid="uid://m4hd7otrpj05" path="res://assets/Pixel Adventure 1/Free/Main Characters/Ninja Frog/Jump (32x32).png" id="1_wiyru"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dexjf"]
-radius = 50.0
-height = 162.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksn21"]
+size = Vector2(32, 34)
 
 [node name="fire_man" type="CharacterBody2D"]
 script = ExtResource("1_oq64c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(215, 171)
-scale = Vector2(5, 5)
+position = Vector2(-2, 0)
 texture = ExtResource("1_wiyru")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(216, 176)
-shape = SubResource("CapsuleShape2D_dexjf")
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ksn21")

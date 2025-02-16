@@ -1,9 +1,8 @@
-[gd_scene load_steps=45 format=3 uid="uid://d3hmnxo8uu4nh"]
+[gd_scene load_steps=44 format=3 uid="uid://d3hmnxo8uu4nh"]
 
-[ext_resource type="Script" path="res://fire.gd" id="1_11ebc"]
-[ext_resource type="Texture2D" uid="uid://dhaxk17xj4uom" path="res://assets/Particle FX 1.2 Free/Spritesheets/Fire+Sparks-Sheet.png" id="1_a8ahh"]
-[ext_resource type="Texture2D" uid="uid://b3nvaeqbm47dx" path="res://assets/Particle FX 1.2 Free/Spritesheets/Smoke-Sheet.png" id="3_mcfug"]
-[ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Scene/fire_man.tscn" id="4_c83ik"]
+[ext_resource type="Script" path="res://Objects/fire.gd" id="1_11ebc"]
+[ext_resource type="Texture2D" uid="uid://cn1do1waqtraj" path="res://assets/Particle FX 1.2 Free/Spritesheets/Fire+Sparks-Sheet.png" id="1_a8ahh"]
+[ext_resource type="Texture2D" uid="uid://cqcmahsosjo5b" path="res://assets/Particle FX 1.2 Free/Spritesheets/Smoke-Sheet.png" id="3_mcfug"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4p8mi"]
 atlas = ExtResource("1_a8ahh")
@@ -288,7 +287,7 @@ animations = [{
 radius = 17.0
 height = 52.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="fire" type="CharacterBody2D"]
 script = ExtResource("1_11ebc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -300,6 +299,3 @@ animation = &"active"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fire_Hurtbox"]
 position = Vector2(1, 25)
 shape = SubResource("CapsuleShape2D_fq386")
-
-[node name="fire_man" parent="." instance=ExtResource("4_c83ik")]
-position = Vector2(-113, -33)
