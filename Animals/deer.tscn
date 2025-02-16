@@ -80,6 +80,8 @@ radius = 434.166
 
 [node name="Deer" type="CharacterBody2D"]
 position = Vector2(-25, -2)
+collision_layer = 2
+motion_mode = 1
 script = ExtResource("1_tl86y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -101,3 +103,5 @@ shape = SubResource("CircleShape2D_gtup7")
 shape = SubResource("CircleShape2D_hwtco")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_max_distance = 95.0
+path_postprocessing = 1

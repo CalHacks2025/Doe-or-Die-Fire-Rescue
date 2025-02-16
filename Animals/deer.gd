@@ -17,9 +17,16 @@ func get_random_direction() -> Vector2:
 	var angle = randf_range(0, 2 * PI)
 	return Vector2(cos(angle), sin(angle)).normalized()
 
+func wait_for_physics():
+	await get_tree().physics_frame
+	set_physics_process(true)
+
 func _ready():
 	fireman = get_tree().get_nodes_in_group("fire_man")[0] # Set fireman entity to chase
 	#$AnimatedSprite2D.play("idle")
+	
+	set_physics_process(false)
+	call_deferred("wait_for_physics")
 	
 	# Setup area for aggro (chasing behaviour) towards fireman
 	var da = $"deer_agro"
@@ -42,8 +49,10 @@ func _on_aggro_exited(body):
 
 # Head towards fireman if aggroed
 func chase_fireman(delta: float) -> void:
+	if nav_agent.is_navigation_finished() and nav_agent.target_position == fireman.global_position:
+		return
 	nav_agent.target_position = fireman.global_position
-	velocity = global_position.direction_to(nav_agent.get_next_path_position())
+	velocity = global_position.direction_to(nav_agent.get_next_path_position()) * SPEED
 	move_and_slide()
 	$AnimatedSprite2D.play("walking")
 	rotation = velocity.angle()
