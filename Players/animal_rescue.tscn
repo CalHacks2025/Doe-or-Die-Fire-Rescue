@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://b4juqgpghx6rn"]
+[gd_scene load_steps=80 format=3 uid="uid://b4juqgpghx6rn"]
 
 [ext_resource type="Script" path="res://Players/animal_rescue.gd" id="1_ir31v"]
 [ext_resource type="Texture2D" uid="uid://doejyvg573iej" path="res://assets/custom assets/brown_circle.png" id="2_87538"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bchjxxbnfg8tg" path="res://assets/MinifolksForestAnimals/Outline/MiniDeer1.png" id="5_ianrj"]
 [ext_resource type="Script" path="res://Players/carry_deer.gd" id="6_3551k"]
 [ext_resource type="Texture2D" uid="uid://dgnnob0pf2dfc" path="res://assets/custom assets/red_hp.png" id="9_en4by"]
+[ext_resource type="Texture2D" uid="uid://cttqarptxtu2r" path="res://assets/MinifolksForestAnimals/Outline/MiniBunny.png" id="9_svcl6"]
+[ext_resource type="Script" path="res://Players/carr_bunny.gd" id="10_pblva"]
 [ext_resource type="Texture2D" uid="uid://s4juamxlyd4f" path="res://assets/custom assets/green_hp.png" id="10_ytn6a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lxm50"]
@@ -447,6 +449,75 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_31pad"]
+atlas = ExtResource("9_svcl6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yy2l"]
+atlas = ExtResource("9_svcl6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wp7f"]
+atlas = ExtResource("9_svcl6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81i48"]
+atlas = ExtResource("9_svcl6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_647pa"]
+atlas = ExtResource("9_svcl6")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrs53"]
+atlas = ExtResource("9_svcl6")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0d03"]
+atlas = ExtResource("9_svcl6")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf2py"]
+atlas = ExtResource("9_svcl6")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5t6vj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31pad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yy2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wp7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81i48")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_647pa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrs53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0d03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf2py")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 5.0
+}]
+
 [node name="animal_rescue" type="CharacterBody2D"]
 script = ExtResource("1_ir31v")
 
@@ -477,12 +548,19 @@ sprite_frames = SubResource("SpriteFrames_1llmq")
 animation = &"walk_forwards"
 
 [node name="carry_deer" type="AnimatedSprite2D" parent="."]
-position = Vector2(-6, -22)
+position = Vector2(-7, -18)
 rotation = 3.14159
-scale = Vector2(3.12922, 3.01862)
+scale = Vector2(4.33701, 4.37506)
 sprite_frames = SubResource("SpriteFrames_lxpqv")
 animation = &"idle"
 script = ExtResource("6_3551k")
+
+[node name="carry_bunny" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, 6)
+scale = Vector2(-4.05017, -5.01809)
+sprite_frames = SubResource("SpriteFrames_5t6vj")
+animation = &"moving"
+script = ExtResource("10_pblva")
 
 [node name="RedHp" type="Sprite2D" parent="."]
 position = Vector2(0, 27)
@@ -495,5 +573,9 @@ scale = Vector2(0.5, 1)
 texture = ExtResource("10_ytn6a")
 centered = false
 
+[node name="damage_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="body_entered" from="animal_rescue_hitbox" to="." method="_on_animal_rescue_hitbox_body_entered"]
 [connection signal="body_exited" from="animal_rescue_hitbox" to="." method="_on_animal_rescue_hitbox_body_exited"]
+[connection signal="timeout" from="damage_cooldown" to="." method="_on_damage_cooldown_timeout"]

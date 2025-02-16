@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d2khrcrwhwbyr" path="res://Animals/deer.tscn" id="1_5gobf"]
 [ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_c7gcj"]
 [ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Players/animal_rescue.tscn" id="3_taj2m"]
-[ext_resource type="PackedScene" uid="uid://bjk078xx4dhtc" path="res://Objects/deer_drop_off.tscn" id="4_3ypi8"]
+[ext_resource type="PackedScene" path="res://Objects/deer_drop_off.tscn" id="4_3ypi8"]
 
 [node name="DeerTest" type="Node2D"]
 

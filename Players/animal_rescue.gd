@@ -3,11 +3,13 @@ extends CharacterBody2D
 var health = GameManager.player_totalHP
 var SPEED = GameManager.player_speed
 var player_alive = true
+var iframe_cooldown = true # false when iframes active
 var fire_in_range = false
 var drop_in_range = false
 
-var deers_in_range = []
+var animals_in_range = []
 var deer_in_hand = false
+var bunny_in_hand = false
 
 var anime = ""
 var aScale = -1
@@ -33,14 +35,14 @@ func _ready():
 	
 
 func _on_pickup_entered(body):
-	if body.name == "deer_hb":
-		deers_in_range.append(body.get_parent())
+	if body.name == "deer_hb" or body.name == "bunny_hb":
+		animals_in_range.append(body.get_parent())
 	if body.name == "DeerDropOff":
 		drop_in_range = true
 	
 func _on_pickup_exited(body):
-	if body.name == "deer_hb":
-		deers_in_range.erase(body.get_parent())
+	if body.name == "deer_hb" or body.name == "bunny_hb":
+		animals_in_range.erase(body.get_parent())
 	
 	if body.name == "DeerDropOff":
 		drop_in_range = false
@@ -86,32 +88,46 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("pickup_deer"):
 		var mini_dis = 999999
-		if deers_in_range and not deer_in_hand:
-			var min_deer = self
-			for deer in deers_in_range:
+		if animals_in_range and not deer_in_hand and not bunny_in_hand:
+			var min_animal = self
+			for deer in animals_in_range:
 				var dist = self.position.distance_to(deer.position)
 				if dist <= mini_dis:
 					mini_dis = dist
-					min_deer = deer
-			min_deer.queue_free()
-			deer_in_hand = true
-	if Input.is_action_just_pressed("pickup_deer") and deer_in_hand and drop_in_range:
-		deer_in_hand = false
+					min_animal = deer
+			if "Deer" in min_animal.name :
+				deer_in_hand = true
+			else:
+				bunny_in_hand = true
+			min_animal.queue_free()
+			
+	if Input.is_action_just_pressed("pickup_deer") and (deer_in_hand or bunny_in_hand) and drop_in_range:
+		if bunny_in_hand:
+			bunny_in_hand = false
+		else:
+			deer_in_hand = false
 		GameManager.animals_saved += 1
 		
 	
 	fire_kill()
 	if health <=0:
 		player_alive = false
+		GameManager.animal_rescute_alive = false
 		health = 0
 		print("Player has been killed")
 		self.queue_free()
 
-		
+func _on_damage_cooldown_timeout() -> void:
+	iframe_cooldown = true
+
+func take_damage(amount: int):
+	health -= amount
+	iframe_cooldown = false
+	$damage_cooldown.start()
+
 func fire_kill():
-	if fire_in_range:
-		health = 0
-		print("player died")
+	if fire_in_range and iframe_cooldown == true:
+		take_damage(35)
 
 func _on_body_entered(body):
 	if body.name =="Fire_Hurtbox":

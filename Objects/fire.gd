@@ -10,6 +10,9 @@ const MIN_SPACING = 50    # Minimum spacing to prevent overlap
 const GROUP_NAME = "fire_spread"  # Group for tracking fires
 
 func _ready() -> void:
+	if GameManager.fires_left < 0:
+		GameManager.fires_left = 0
+	GameManager.fires_left += 1
 	sprite.play("active")
 	add_to_group(GROUP_NAME)  # Track this instance as fire
 	start_spawn_timer()  # Begin the spreading cycle
