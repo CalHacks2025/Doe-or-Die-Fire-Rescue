@@ -66,8 +66,18 @@ position = Vector2(171, 1319)
 [node name="Deer" parent="." instance=ExtResource("3_cp728")]
 position = Vector2(470, 894)
 
+[node name="Deer2" parent="." instance=ExtResource("3_cp728")]
+position = Vector2(-162, 1005)
+
+[node name="Deer3" parent="." instance=ExtResource("3_cp728")]
+position = Vector2(966, 996)
+
 [node name="Bunny" parent="." instance=ExtResource("5_v1iat")]
 position = Vector2(155, 621)
+scale = Vector2(3, 3)
+
+[node name="Bunny2" parent="." instance=ExtResource("5_v1iat")]
+position = Vector2(1052, 568)
 scale = Vector2(3, 3)
 
 [node name="DeerDropOff" parent="." instance=ExtResource("4_464ew")]

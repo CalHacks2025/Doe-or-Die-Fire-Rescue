@@ -95,7 +95,7 @@ func _physics_process(delta: float) -> void:
 				if dist <= mini_dis:
 					mini_dis = dist
 					min_animal = deer
-			if min_animal.name == "Deer":
+			if "Deer" in min_animal.name :
 				deer_in_hand = true
 			else:
 				bunny_in_hand = true
