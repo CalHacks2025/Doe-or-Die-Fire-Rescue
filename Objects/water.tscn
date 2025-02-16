@@ -1,16 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyvnsjxxfewmb"]
-
-[ext_resource type="Texture2D" uid="uid://caenphjoxvevt" path="res://assets/Pixel Adventure 1/Free/Background/Blue.png" id="1_cqinc"]
+[gd_scene load_steps=2 format=3 uid="uid://rn5vh73s3gij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dctv1"]
 size = Vector2(32, 32)
 
 [node name="Water" type="CharacterBody2D"]
 position = Vector2(15, 11)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_cqinc")
 
 [node name="water_hit_box" type="Area2D" parent="."]
 

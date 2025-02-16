@@ -383,5 +383,9 @@ animation = &"walk_forwards"
 position = Vector2(-1, -1)
 shape = SubResource("CapsuleShape2D_lumua")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-216, -170)
+polygon = PackedVector2Array(210, 159, 215, 157, 217, 161, 219, 159, 220, 159, 223, 159, 225, 163, 226, 172, 225, 180, 224, 187, 207, 187, 205, 179, 202, 159)
+
 [connection signal="body_entered" from="animal_rescue_hitbox" to="." method="_on_animal_rescue_hitbox_body_entered"]
 [connection signal="body_exited" from="animal_rescue_hitbox" to="." method="_on_animal_rescue_hitbox_body_exited"]

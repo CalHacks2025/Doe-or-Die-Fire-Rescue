@@ -371,6 +371,9 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_1dl2k")
 animation = &"watering"
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(210, 159, 215, 157, 217, 161, 219, 159, 220, 159, 223, 159, 225, 163, 226, 172, 225, 180, 224, 187, 207, 187, 205, 179, 202, 159)
+
 [connection signal="body_entered" from="fire_man_hitbox" to="." method="_on_fire_man_hitbox_body_entered"]
 [connection signal="body_exited" from="fire_man_hitbox" to="." method="_on_fire_man_hitbox_body_exited"]
 [connection signal="timeout" from="damage_cooldown" to="." method="_on_damage_cooldown_timeout"]
