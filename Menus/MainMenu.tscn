@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://bp5eq3qwnx5lf"]
 
 [ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_fhkcx"]
-[ext_resource type="FontFile" uid="uid://c1n7erivxc3cl" path="res://assets/Fonts/mago3.ttf" id="2_sxpaf"]
-[ext_resource type="Texture2D" uid="uid://bxlydntt7c00d" path="res://assets/gui/background/88c1ba87-34b9-4075-9db6-44ac78eafb30-0.png" id="3_qynk0"]
-[ext_resource type="FontFile" uid="uid://coji67u7tt7kp" path="res://assets/Fonts/mago1.ttf" id="3_rsmx6"]
+[ext_resource type="FontFile" uid="uid://vxgjg3p71pyn" path="res://assets/Fonts/mago3.ttf" id="2_sxpaf"]
+[ext_resource type="Texture2D" uid="uid://dcs3p3xc8fqm1" path="res://assets/gui/background/88c1ba87-34b9-4075-9db6-44ac78eafb30-0.png" id="3_qynk0"]
+[ext_resource type="FontFile" uid="uid://dpksqjtkg6stf" path="res://assets/Fonts/mago1.ttf" id="3_rsmx6"]
 [ext_resource type="Texture2D" uid="uid://cfyxpke5a1moi" path="res://assets/UI assets pack 2/UI assets pack 2/UI books & more.png" id="5_728s4"]
 
 [sub_resource type="Theme" id="Theme_bdxb2"]
@@ -65,6 +65,7 @@ theme_override_constants/shadow_outline_size = 25
 text = "Doe or Die"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 484.0
 offset_top = 410.0
 offset_right = 1291.0
