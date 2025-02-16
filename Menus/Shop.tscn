@@ -114,6 +114,7 @@ region_enabled = true
 region_rect = Rect2(767.621, 63.344, 49.8373, 49.6196)
 
 [node name="label1" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 123.0
 offset_top = 302.0
 offset_right = 406.0
@@ -124,6 +125,7 @@ theme_override_font_sizes/normal_font_size = 75
 text = "You earned:"
 
 [node name="label2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 119.0
 offset_top = 491.0
 offset_right = 557.0
