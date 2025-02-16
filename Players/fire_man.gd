@@ -141,6 +141,7 @@ func _process(delta: float) -> void:
 	if health <= 0:
 		player_alive = false
 		health = 0
+		GameManager.player_totalHP = 0
 		self.queue_free()
 
 
