@@ -6,6 +6,6 @@ extends Sprite2D
 func _process(delta: float) -> void:
 	var parent = get_parent()
 	if parent.water_level > 0:
-		modulate.a8 = 50
+		modulate.a8 = 75
 	else:
 		modulate.a8 = 0

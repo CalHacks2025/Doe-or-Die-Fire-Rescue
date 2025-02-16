@@ -8,14 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://chdls7iy0xuh0" path="res://assets/custom assets/fireman_walk.png" id="6_6p2or"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydddw"]
-radius = 18.0
-height = 38.0
+radius = 19.0
+height = 52.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lytl3"]
-radius = 60.0083
+radius = 68.0294
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sha5p"]
-radius = 39.0
+radius = 42.0119
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmylw"]
 atlas = ExtResource("5_jt5h5")
@@ -339,8 +339,8 @@ animations = [{
 script = ExtResource("1_oq64c")
 
 [node name="circle" type="Sprite2D" parent="."]
-position = Vector2(216.5, 172.5)
-scale = Vector2(0.248047, 0.248047)
+position = Vector2(216, 173)
+scale = Vector2(0.28125, 0.285156)
 texture = ExtResource("2_v2iap")
 script = ExtResource("3_jxnao")
 
@@ -367,7 +367,7 @@ shape = SubResource("CircleShape2D_sha5p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(216, 173)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_1dl2k")
 animation = &"watering"
 
