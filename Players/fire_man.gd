@@ -58,3 +58,5 @@ func fire_damage():
 
 func _on_damage_cooldown_timeout() -> void:
 	fire_damage_cooldown = true
+
+	
