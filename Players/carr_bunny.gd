@@ -12,7 +12,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var parent = get_parent()
-	if parent.deer_in_hand:
+	if parent.bunny_in_hand:
 		self.modulate.a8 = 255
 	else:
 		self.modulate.a8 = 0
