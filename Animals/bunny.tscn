@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://u1j7yt73gka5"]
+[gd_scene load_steps=13 format=3 uid="uid://c63olc2jt6tta"]
 
 [ext_resource type="Script" path="res://Animals/bunny.gd" id="1_vefjt"]
 [ext_resource type="Texture2D" uid="uid://cttqarptxtu2r" path="res://assets/MinifolksForestAnimals/Outline/MiniBunny.png" id="2_dfefb"]

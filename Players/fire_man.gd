@@ -42,7 +42,7 @@ func _ready():
 	wr.area_entered.connect(_on_water_entered)
 	wr.area_exited.connect(_on_water_exited)
 	
-	print(speed)
+
 func _on_water_entered(body):
 	if body.name == "water_hit_box":
 		water_next_to += 1
@@ -76,9 +76,9 @@ func _on_body_exited(body: Node):
 		bunny_in_range = false
 
 func take_damage(amount: int):
-		health -= amount
-		iframe_cooldown = false
-		$damage_cooldown.start()
+	health -= amount
+	iframe_cooldown = false
+	$damage_cooldown.start()
 
 func deer_damage():
 	if deer_in_range and iframe_cooldown == true:
