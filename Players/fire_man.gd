@@ -84,8 +84,6 @@ func _on_fire_man_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("fire"):
 		fire_in_range = true
 
-
-
 func _process(delta: float) -> void:
 	move()
 	
