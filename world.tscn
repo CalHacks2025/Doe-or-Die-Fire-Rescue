@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://cids8xhoinaay"]
+[gd_scene load_steps=5 format=4 uid="uid://cp42glql32kcy"]
 
-[ext_resource type="TileSet" uid="uid://cdy636aqc2pxo" path="res://Tilesets.tres" id="1_c84qd"]
+[ext_resource type="TileSet" uid="uid://cr7i00fmc25dn" path="res://Tilesets.tres" id="1_c84qd"]
 [ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_em7iw"]
+[ext_resource type="PackedScene" uid="uid://dyvnsjxxfewmb" path="res://Objects/water.tscn" id="3_x87bv"]
+[ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Players/animal_rescue.tscn" id="4_ox2bs"]
 
 [node name="World" type="Node2D"]
 position = Vector2(336, -370)
@@ -61,6 +63,60 @@ position = Vector2(428, 880)
 skew = 0.904081
 limit_left = -10001795
 
+[node name="PickableWater" parent="." instance=ExtResource("3_x87bv")]
+position = Vector2(58, 1199)
+scale = Vector2(-0.675667, -5.67293)
+
+[node name="Water" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-38.4805, -14.6309)
+scale = Vector2(4.31524, 0.0974689)
+
+[node name="Water7" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-700.049, -1.05765)
+scale = Vector2(4.31524, 0.0974689)
+
+[node name="Water14" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-1448.94, 29.6143)
+scale = Vector2(4.31524, 0.0974689)
+
+[node name="Water15" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-935.372, 29.2618)
+scale = Vector2(4.31524, 0.0974689)
+
+[node name="Water18" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-1485.94, 48.1232)
+scale = Vector2(4.31524, 0.0974689)
+
+[node name="Water4" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-161.322, -34.3737)
+scale = Vector2(4.31524, 0.0974689)
+
+[node name="Water2" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-421.806, -14.6309)
+scale = Vector2(14.3202, 0.0974689)
+
+[node name="Water13" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-1213.62, 26.9702)
+scale = Vector2(14.3202, 0.0974689)
+
+[node name="Water3" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-96.2013, -31.9059)
+
+[node name="Water5" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-205.723, -31.3771)
+
+[node name="Water8" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-205.723, -31.3771)
+
+[node name="Water6" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-630.488, -15.5123)
+
+[node name="Water11" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-976.813, 32.9635)
+
+[node name="Water12" parent="PickableWater" instance=ExtResource("3_x87bv")]
+position = Vector2(-1434.14, 32.4347)
+
 [node name="Collisions" type="StaticBody2D" parent="."]
 visible = false
 position = Vector2(119, 929)
@@ -99,3 +155,6 @@ polygon = PackedVector2Array(256, -184, 260, -261, 406, -263, 408, -293, 417, -4
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Collisions"]
 polygon = PackedVector2Array(979, -386, 976, -404, 423, -400, 420, -496, -120, -498, -120, -482, -232, -530, 993, -526, 976, -404)
+
+[node name="animal_rescue" parent="." instance=ExtResource("4_ox2bs")]
+position = Vector2(357, 1064)
