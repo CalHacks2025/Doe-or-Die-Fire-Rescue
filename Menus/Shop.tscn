@@ -8,7 +8,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uryhl"]
 texture = ExtResource("5_cs7dl")
-region_rect = Rect2(352.985, 272.994, 30.1221, 14.3703)
+region_rect = Rect2(352.272, 271.943, 31.8002, 15.8581)
 
 [sub_resource type="GDScript" id="GDScript_4fqv2"]
 script/source = "extends Button
@@ -91,12 +91,26 @@ texture = ExtResource("5_cs7dl")
 region_enabled = true
 region_rect = Rect2(15.6587, 175.748, 96.0944, 50.8953)
 
-[node name="icon" type="Sprite2D" parent="."]
+[node name="icon3" type="Sprite2D" parent="."]
 position = Vector2(905, 546)
 scale = Vector2(13.7083, 14.0333)
 texture = ExtResource("5_cs7dl")
 region_enabled = true
 region_rect = Rect2(368.18, 433.254, 15.8382, 30.255)
+
+[node name="icon" type="Sprite2D" parent="."]
+position = Vector2(348, 375)
+scale = Vector2(13.7083, 14.0333)
+texture = ExtResource("5_cs7dl")
+region_enabled = true
+region_rect = Rect2(352.095, 272.132, 31.5485, 15.6903)
+
+[node name="icon4" type="Sprite2D" parent="."]
+position = Vector2(350, 620)
+scale = Vector2(13.7083, 14.0333)
+texture = ExtResource("5_cs7dl")
+region_enabled = true
+region_rect = Rect2(352.089, 271.992, 31.6324, 16.0259)
 
 [node name="icon2" type="Sprite2D" parent="."]
 position = Vector2(1141, 547)
@@ -115,10 +129,10 @@ region_rect = Rect2(767.621, 63.344, 49.8373, 49.6196)
 
 [node name="label1" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 123.0
-offset_top = 302.0
-offset_right = 406.0
-offset_bottom = 400.0
+offset_left = 208.0
+offset_top = 313.0
+offset_right = 491.0
+offset_bottom = 411.0
 theme_override_colors/default_color = Color(0.188235, 0.219608, 0.262745, 1)
 theme_override_fonts/normal_font = ExtResource("4_r53g6")
 theme_override_font_sizes/normal_font_size = 75
@@ -126,10 +140,10 @@ text = "You earned:"
 
 [node name="label2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 119.0
-offset_top = 491.0
-offset_right = 557.0
-offset_bottom = 589.0
+offset_left = 196.0
+offset_top = 557.0
+offset_right = 634.0
+offset_bottom = 655.0
 theme_override_colors/default_color = Color(0.188235, 0.219608, 0.262745, 1)
 theme_override_fonts/normal_font = ExtResource("4_r53g6")
 theme_override_font_sizes/normal_font_size = 75
@@ -137,25 +151,25 @@ text = "Total money:"
 
 [node name="MoneyField" type="RichTextLabel" parent="."]
 layout_mode = 2
-offset_left = 178.0
-offset_top = 371.0
-offset_right = 461.0
-offset_bottom = 469.0
+offset_left = 235.0
+offset_top = 369.0
+offset_right = 469.0
+offset_bottom = 433.0
 theme_override_colors/default_color = Color(0.501961, 0.709804, 0.301961, 1)
-theme_override_fonts/normal_font = ExtResource("4_r53g6")
+theme_override_fonts/normal_font = ExtResource("3_4kg1h")
 theme_override_font_sizes/normal_font_size = 75
-text = "hihihi"
+text = "00"
 
 [node name="MoneyEarnedField" type="RichTextLabel" parent="."]
 layout_mode = 2
-offset_left = 171.0
-offset_top = 561.0
-offset_right = 548.0
-offset_bottom = 644.0
-theme_override_colors/default_color = Color(0.294118, 0.486275, 0.290196, 1)
-theme_override_fonts/normal_font = ExtResource("4_r53g6")
+offset_left = 231.0
+offset_top = 620.0
+offset_right = 455.0
+offset_bottom = 688.0
+theme_override_colors/default_color = Color(0.27451, 0.490196, 0.282353, 1)
+theme_override_fonts/normal_font = ExtResource("3_4kg1h")
 theme_override_font_sizes/normal_font_size = 75
-text = "hellehelehelelo"
+text = "00"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
