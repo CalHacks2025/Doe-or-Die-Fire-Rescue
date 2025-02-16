@@ -62,10 +62,18 @@ func _on_bucket_exited(body):
 func _on_body_entered(body):
 	if body.name =="Fire_Hurtbox":
 		fire_in_range = true
+	elif body.name == "deer_hb":
+		deer_in_range = true
+	elif body.name == "bunny_hb":
+		bunny_in_range = true
 
 func _on_body_exited(body: Node):
 	if body.name == "Fire_Hurtbox":
 		fire_in_range = false
+	elif body.name == "deer_hb":
+		deer_in_range = false
+	elif body.name == "bunny_hb":
+		bunny_in_range = false
 
 func take_damage(amount: int):
 		health -= amount
@@ -162,6 +170,8 @@ func _process(_delta: float) -> void:
 			water_level = 0			
 	
 	fire_damage()
+	deer_damage()
+	bunny_damage()
 	
 	if health <= 0:
 		player_alive = false
