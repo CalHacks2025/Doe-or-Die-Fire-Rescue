@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Calgary-Hacks-2025"
-run/main_scene="res://Scene/bucket_dev.tscn"
+run/main_scene="res://Menus/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://GameManager.gd"
 
 [input]
 

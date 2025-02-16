@@ -11,11 +11,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_start_pressed() -> void:
-	print("Start")
-	get_tree().change_scene_to_file("res://Menus/DummyLevel.tscn") # Change to Level 1
-
-
-func _on_exit_pressed() -> void:
-	print("Exit")
-	get_tree().quit()
+func _on_continue_pressed() -> void:
+	get_tree().change_scene_to_file("res://Menus/GameOver.tscn") # change to next level
+	
+	
+# todo: add methods for button presses (item selection)
+# todo: coin/price
