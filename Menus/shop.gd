@@ -12,7 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if GameManager.money:
-		money_field.text = "$ %0d" % GameManager.money
+		money_field.text = "Total moneys: $ %0d" % GameManager.money
 
 
 func _on_continue_pressed() -> void:
