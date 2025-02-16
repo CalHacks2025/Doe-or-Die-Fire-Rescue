@@ -295,20 +295,20 @@ height = 52.0
 script = ExtResource("1_2uvbr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(301, 180)
+position = Vector2(0, -37)
 sprite_frames = SubResource("SpriteFrames_utg3j")
 animation = &"active"
 frame = 3
 frame_progress = 0.282228
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(301, 203)
+position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_a3x86")
 
 [node name="Fire_Hurtbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fire_Hurtbox"]
-position = Vector2(301, 206)
+position = Vector2(-1, -10)
 shape = SubResource("CapsuleShape2D_fq386")
 
 [node name="Timer" type="Timer" parent="."]

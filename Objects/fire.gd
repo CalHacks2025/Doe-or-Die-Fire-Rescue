@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 const MIN_TIME = 7
 const MAX_TIME = 10
-const SPAWN_RADIUS = 125  # Distance to spawn new fire
+const SPAWN_RADIUS = 150  # Distance to spawn new fire
 const MIN_SPACING = 50    # Minimum spacing to prevent overlap
 const GROUP_NAME = "fire_spread"  # Group for tracking fires
 
@@ -49,7 +49,7 @@ func spawn_fire():
 	var tries = 10
 	while tries > 0:
 		var offset = Vector2(randf_range(-SPAWN_RADIUS, SPAWN_RADIUS), randf_range(-SPAWN_RADIUS, SPAWN_RADIUS))
-		var new_position = Vector2(49,-248)
+		var new_position = self.position + offset
 		var valid_position = false
 
 		# Check each TileMapLayer for a flammable tile at this position
