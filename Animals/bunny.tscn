@@ -74,9 +74,12 @@ animations = [{
 
 [node name="Bunny" type="CharacterBody2D"]
 script = ExtResource("1_vefjt")
-hit_radius = null
-random_move_interval = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r6i68")
 animation = &"moving"
+
+[node name="MovementClock" type="Timer" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 5, -8, 12, -5, 16, 4, 16, 7, 12, 4, 5)
