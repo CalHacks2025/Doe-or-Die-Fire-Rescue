@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-var health = 100
+var health = GameManager.player_totalHP
+var SPEED = GameManager.player_speed
 var player_alive = true
 var fire_in_range = false
 
 var anime = ""
 var aScale = -1
 
-const SPEED = 300.0
 
 func _ready():
 	var area2D = $"animal_rescue_hitbox"

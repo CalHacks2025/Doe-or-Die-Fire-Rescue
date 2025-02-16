@@ -20,11 +20,12 @@ var HP_PRICE = 10
 var WATERRANGE_PRICE = 10
 var PICKUPRANGE_PRICE = 10
 
-var player_speed = 0
-var water_radius = 0
-var pickup_radius = 0
-var fireman_totalHP = 0
-var animalRescue_totalHP = 0
+# fireman stats
+var player_speed = 300
+var player_totalHP = 100
+var water_radius = 0 # todo make it work
+var pickup_radius = 0 # todo make it work
+var animalRescue_totalHP = 0 # todo make it work
 
 # per level
 var last_money_earned = 0
@@ -35,6 +36,7 @@ func _ready() -> void:
 	timer.wait_time = TIMEOUT
 	timer.one_shot = true
 	add_child(timer)
+
 	
 func timer_start():
 	timer.start()
@@ -77,12 +79,12 @@ func spend_money(amount):
 func buy_speed():
 	if spend_money(SPEED_PRICE):
 		print("Speed bought")
-		player_speed *= 2
+		player_speed *= 1.1
 	
 func buy_hp():
 	if spend_money(HP_PRICE):
 		print("hp bought")
-		fireman_totalHP += 1
+		player_totalHP *= 1.1
 		animalRescue_totalHP += 1
 
 func buy_waterRange():
