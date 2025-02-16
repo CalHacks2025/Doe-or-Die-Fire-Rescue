@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://cp42glql32kcy"]
+[gd_scene load_steps=3 format=4 uid="uid://cp42glql32kcy"]
 
 [ext_resource type="TileSet" uid="uid://cr7i00fmc25dn" path="res://Tilesets.tres" id="1_c84qd"]
+[ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_em7iw"]
 
 [node name="World" type="Node2D"]
 position = Vector2(401, -321)
@@ -48,3 +49,11 @@ tile_set = ExtResource("1_c84qd")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(281, 1254)
 zoom = Vector2(2, 2)
+
+[node name="fire_man" parent="." instance=ExtResource("2_em7iw")]
+position = Vector2(119, 929)
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+position = Vector2(119, 929)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
