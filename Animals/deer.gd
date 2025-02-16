@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var fireman : CharacterBody2D # The fireman, for chasing and collision
 @export var hit_radius: float = 200.0  # Radius to detect the player
 @export var random_move_interval: float = 2.0  # Time between random direction changes
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 # Init random stuff to 0 for now
 var random_direction: Vector2 = Vector2.ZERO
@@ -41,19 +42,11 @@ func _on_aggro_exited(body):
 
 # Head towards fireman if aggroed
 func chase_fireman(delta: float) -> void:
-	#print("Chasing")
-	## Calculate direction to the player and move
-	#var direction = global_position.direction_to(fireman.global_position)
-	#var target_velocity = direction * SPEED
-#
-	## Smoothly interpolate towards the target velocity
-	#velocity = velocity.lerp(target_velocity, delta * 10.0)
-	#move_and_slide()
-	# Calculate the direction and move towards the target
-	var direction = (fireman.global_position - global_position).normalized()
-	global_position = global_position.move_toward(fireman.global_position, SPEED * delta)
+	nav_agent.target_position = fireman.global_position
+	velocity = global_position.direction_to(nav_agent.get_next_path_position())
+	move_and_slide()
 	$AnimatedSprite2D.play("walking")
-	rotation = direction.angle()
+	rotation = velocity.angle()
 
 # Head in a pseudo random fashion
 func move_random(delta: float) -> void:
