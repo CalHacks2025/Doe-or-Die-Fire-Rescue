@@ -1,10 +1,9 @@
-[gd_scene load_steps=54 format=3 uid="uid://b4juqgpghx6rn"]
+[gd_scene load_steps=53 format=3 uid="uid://b4juqgpghx6rn"]
 
-[ext_resource type="Texture2D" uid="uid://cpbchya8p1qss" path="res://assets/Pixel Adventure 1/Free/Main Characters/Virtual Guy/Fall (32x32).png" id="1_btvqa"]
 [ext_resource type="Script" path="res://Players/animal_rescue.gd" id="1_ir31v"]
-[ext_resource type="Texture2D" uid="uid://c7srw8nd73yb7" path="res://assets/custom assets/ranger_idle.png" id="3_s8fgk"]
-[ext_resource type="Texture2D" uid="uid://jvp2wjfeloce" path="res://assets/custom assets/ranger_walk.png" id="4_6uaxc"]
-[ext_resource type="Texture2D" uid="uid://c7o55k28y7mpp" path="res://assets/custom assets/ranger_pickup.png" id="4_muly8"]
+[ext_resource type="Texture2D" uid="uid://dweqwmnyxwmmi" path="res://assets/custom assets/ranger_idle.png" id="3_s8fgk"]
+[ext_resource type="Texture2D" uid="uid://drfm26hgvq5wd" path="res://assets/custom assets/ranger_walk.png" id="4_6uaxc"]
+[ext_resource type="Texture2D" uid="uid://dirrshr0iel71" path="res://assets/custom assets/ranger_pickup.png" id="4_muly8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6s6na"]
 atlas = ExtResource("3_s8fgk")
@@ -367,23 +366,21 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lumua"]
-radius = 9.0
-height = 28.0
+radius = 19.0
+height = 58.0
 
 [node name="animal_rescue" type="CharacterBody2D"]
 script = ExtResource("1_ir31v")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_btvqa")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_1llmq")
-animation = &"pickup"
+animation = &"walk_forwards"
 
 [node name="animal_rescue_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="animal_rescue_hitbox"]
-position = Vector2(1, 3)
+position = Vector2(-1, -1)
 shape = SubResource("CapsuleShape2D_lumua")
 
 [connection signal="body_entered" from="animal_rescue_hitbox" to="." method="_on_animal_rescue_hitbox_body_entered"]
