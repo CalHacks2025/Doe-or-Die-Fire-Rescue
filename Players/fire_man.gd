@@ -97,7 +97,7 @@ func _process(delta: float) -> void:
 			print(fire.position)
 			fire.queue_free()
 			fire_died = true
-		fire_objects.clear()
+		fire_objects.clear() 
 		if fire_died:
 			water_level = 0			
 	
