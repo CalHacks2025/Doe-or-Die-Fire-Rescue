@@ -6,7 +6,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GameManager.timer_reset(5)
+	GameManager.timer_reset(30)
 	GameManager.timer_start()
 	print("start dummy level + start timer")
 	
@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 	#pass
 
 func _on_scene_exit():
+	GameManager.calculate_money()
 	GameManager.timer_stop()
 
 func _on_button_pressed() -> void:
