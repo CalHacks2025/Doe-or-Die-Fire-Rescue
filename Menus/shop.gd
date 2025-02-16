@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 
 
 func _on_continue_pressed() -> void:
-	get_tree().change_scene_to_file("res://Menus/GameOver.tscn") # change to next level
+	get_tree().change_scene_to_file("res://world.tscn") # change to next level
 	
 	
 func _on_buy_speed_pressed() -> void:
