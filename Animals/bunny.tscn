@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c63olc2jt6tta"]
+[gd_scene load_steps=13 format=3 uid="uid://u1j7yt73gka5"]
 
 [ext_resource type="Script" path="res://Animals/bunny.gd" id="1_vefjt"]
 [ext_resource type="Texture2D" uid="uid://cttqarptxtu2r" path="res://assets/MinifolksForestAnimals/Outline/MiniBunny.png" id="2_dfefb"]
@@ -72,14 +72,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ck6s5"]
+radius = 8.0
+
 [node name="Bunny" type="CharacterBody2D"]
 script = ExtResource("1_vefjt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_r6i68")
 animation = &"moving"
 
 [node name="MovementClock" type="Timer" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -11)
 polygon = PackedVector2Array(0, 5, -8, 12, -5, 16, 4, 16, 7, 12, 4, 5)
+
+[node name="bunny_hb" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bunny_hb"]
+shape = SubResource("CircleShape2D_ck6s5")
