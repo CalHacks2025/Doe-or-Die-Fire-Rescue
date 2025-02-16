@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bcbcfct43egxt" path="res://Tilesets.tres" id="1_7scj3"]
 [ext_resource type="FontFile" uid="uid://dpksqjtkg6stf" path="res://assets/Fonts/mago1.ttf" id="2_hubtt"]
-[ext_resource type="PackedScene" path="res://Objects/immovableFire.tscn" id="3_p7cog"]
+[ext_resource type="PackedScene" uid="uid://ccokp3p7kp7nn" path="res://Objects/immovableFire.tscn" id="3_p7cog"]
 [ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="3_ytu08"]
 [ext_resource type="Script" path="res://Players/fire_man_NO_BUCKET_ON_SPAWN.gd" id="4_133is"]
 [ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Players/animal_rescue.tscn" id="4_i8ht1"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://rn5vh73s3gij" path="res://Objects/water.tscn" id="7_d8edi"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="8_w0ltg"]
 [ext_resource type="Script" path="res://area_2d.gd" id="9_qykbl"]
-[ext_resource type="PackedScene" path="res://Animals/bunny.tscn" id="10_4ic48"]
+[ext_resource type="PackedScene" uid="uid://c63olc2jt6tta" path="res://Animals/bunny.tscn" id="10_4ic48"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yxta"]
 size = Vector2(43, 63.5)

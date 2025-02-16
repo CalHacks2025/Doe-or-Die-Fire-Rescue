@@ -9,8 +9,8 @@ script/source = "extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var spawn_timer = $Timer  # Reference to the Timer node
 
-const MIN_TIME = 7
-const MAX_TIME = 10
+const MIN_TIME = 10
+const MAX_TIME = 15
 const SPAWN_RADIUS = 150  # Distance to spawn new fire
 const MIN_SPACING = 50    # Minimum spacing to prevent overlap
 const GROUP_NAME = \"fire_spread\"  # Group for tracking fires
