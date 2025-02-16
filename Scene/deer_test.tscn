@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyrtkca214y6o"]
+
+[ext_resource type="PackedScene" uid="uid://d2khrcrwhwbyr" path="res://Animals/deer.tscn" id="1_5gobf"]
+[ext_resource type="PackedScene" uid="uid://clt8fnfsw7qi1" path="res://Players/fire_man.tscn" id="2_c7gcj"]
+
+[node name="DeerTest" type="Node2D"]
+
+[node name="fire_man" parent="." instance=ExtResource("2_c7gcj")]
+
+[node name="Deer" parent="." instance=ExtResource("1_5gobf")]
+position = Vector2(475, 191)
