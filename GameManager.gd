@@ -1,8 +1,10 @@
 extends Node
 
+var game_over = 0 # 0, -1 lost, 1 won
 var money = 0 # ur broke 
 var TIMEOUT = 30 # default timeout for now
 var timer = Timer.new() 
+#var last_score
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,7 +33,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func calculate_money():
-	var amount = timer.time_left # money you get equals time left for now
+	var amount = int(timer.time_left) # money you get equals time left for now
 	add_money(amount)
 	
 func add_money(amount):
@@ -48,5 +50,6 @@ func spend_money(amount):
 		return false
 		
 func _on_timer_timeout():
-	print("timed out")
+	print("timed out: game lost")
+	game_over = -1
 	get_tree().change_scene_to_file("res://Menus/GameOver.tscn")
