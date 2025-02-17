@@ -6,11 +6,15 @@ extends Node2D
 func _ready() -> void:
 	GameManager.timer_reset(100)
 	GameManager.timer_start()
+	GameManager.total_animals = 5
+	GameManager.animals_saved = 0
 	print("start dummy level + start timer")
 	
 	money_label.text = "$ %0d" % GameManager.money
 	
 	connect("tree_exited", Callable(self, "_on_scene_exit"))
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

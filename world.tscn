@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://rn5vh73s3gij" path="res://Objects/water.tscn" id="3_x87bv"]
 [ext_resource type="PackedScene" uid="uid://b7kkfvosyu8ji" path="res://Objects/deer_drop_off.tscn" id="4_464ew"]
 [ext_resource type="PackedScene" uid="uid://b4juqgpghx6rn" path="res://Players/animal_rescue.tscn" id="4_ox2bs"]
-[ext_resource type="PackedScene" uid="uid://c63olc2jt6tta" path="res://Animals/bunny.tscn" id="5_v1iat"]
-[ext_resource type="PackedScene" uid="uid://ccokp3p7kp7nn" path="res://Objects/immovableFire.tscn" id="7_f0t1t"]
+[ext_resource type="PackedScene" uid="uid://u1j7yt73gka5" path="res://Animals/bunny.tscn" id="5_v1iat"]
+[ext_resource type="PackedScene" path="res://Objects/immovableFire.tscn" id="7_f0t1t"]
 [ext_resource type="PackedScene" uid="uid://vfloha6x3wmi" path="res://Objects/fire.tscn" id="7_tww5s"]
-[ext_resource type="FontFile" uid="uid://vxgjg3p71pyn" path="res://assets/Fonts/mago3.ttf" id="9_5u0kg"]
+[ext_resource type="FontFile" uid="uid://5jnny1cv8iie" path="res://assets/Fonts/mago3.ttf" id="9_5u0kg"]
 [ext_resource type="Texture2D" uid="uid://cfyxpke5a1moi" path="res://assets/UI assets pack 2/UI assets pack 2/UI books & more.png" id="11_ofn1c"]
 [ext_resource type="Script" path="res://Objects/immovable_fire.gd" id="11_q87uc"]
 

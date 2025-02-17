@@ -2,7 +2,7 @@ extends Node
 
 var game_over = 0 # 0, -1 lost, 1 won
 var animals_saved = 0
-var total_animals = -1
+var total_animals = 5
 var fires_left = -1
 
 #gamestate variables
@@ -66,11 +66,11 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://Menus/GameOver.tscn")
 		fire_man_alive = true
 		animal_rescute_alive = true
-		
-	if animals_saved == total_animals and fires_left <= 0:
+		GameManager.player_speed = 300
+	print("animals_saved: ", animals_saved, " total animals: ", total_animals, " fires left:", fires_left )
+	if animals_saved == total_animals:
 		game_over = 1
 		fires_left = -1
-		total_animals = -1
 		animals_saved = 0
 		GameManager.last_money_earned = 100 * (1+(float(timer.time_left) / 60))
 		GameManager.money += 100 * (1+(float(timer.time_left) / 60))
@@ -122,3 +122,7 @@ func _on_timer_timeout():
 	last_money_earned = 0
 	game_over = -1
 	get_tree().change_scene_to_file("res://Menus/GameOver.tscn")
+	
+func tutorialComplete():
+	last_money_earned = 15
+	add_money(last_money_earned)

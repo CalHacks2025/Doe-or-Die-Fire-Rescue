@@ -18,9 +18,9 @@ func wait_for_physics():
 
 
 func _ready():
-	if GameManager.total_animals < 0:
-		GameManager.total_animals = 0
-	GameManager.total_animals += 1
+	#if GameManager.total_animals < 0:
+		#GameManager.total_animals = 0
+	#GameManager.total_animals += 1
 	# Wait before enabling physics due to how navigation agent works
 	set_physics_process(false)
 	call_deferred("wait_for_physics")
